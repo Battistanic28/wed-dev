@@ -1,11 +1,15 @@
 {
+  "AUTH": {
+    "title": "Please enter password",
+    "description": ""
+  },
   "HOME": {
     "title": "Home",
     "description": ""
   },
   "RSVP": {
     "title": "RSVP",
-    "description": "Please enter your name to match with our list"
+    "description": "Search by last name and select any members of your group! You can change your response at any time."
   },
   "STORY": {
     "title": "Story",

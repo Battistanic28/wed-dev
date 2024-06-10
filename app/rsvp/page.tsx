@@ -3,12 +3,21 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Page from '@/components/Page';
 import config from '../../config/config.json'
+import { Button } from '@mui/material';
 
 
 const { title, description } = config.RSVP;
 
+// Initial array filtering approach
+// TODO: Move functions out of components
+const attendees = ["Barker", "Doe", "Blobins", "Blobins"]
+const filter = attendees.filter(item => {
+  return item === 'Blobins'
+})
+
 
 export default function FormPropsTextFields() {
+  console.log(filter)
   return (
     <Page title={title} description={description}>
         <Box
@@ -21,15 +30,11 @@ export default function FormPropsTextFields() {
         >
         <div>
             <TextField
-            id="firstname"
-            label="First name"
-            variant="standard"
-            />
-            <TextField
             id="lastname"
             label="Last name"
             variant="standard"
             />
+            <Button variant="outlined">Search</Button>
         </div>
         </Box>
     </Page>
