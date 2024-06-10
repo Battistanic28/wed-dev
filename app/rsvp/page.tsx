@@ -23,13 +23,11 @@ export default function FormPropsTextFields() {
             <TextField
             id="firstname"
             label="First name"
-            type="password"
             variant="standard"
             />
             <TextField
             id="lastname"
             label="Last name"
-            type="password"
             variant="standard"
             />
         </div>
