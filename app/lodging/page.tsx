@@ -1,9 +1,9 @@
 import Page from "@/components/Page";
+import config from '../../config/config.json'
 
-export default function Home() {
+export default function LodgingPage() {
+  const { title } = config.LODGING
   return (
-    <Page>
-      <h1>Lodging</h1>
-    </Page>
+    <Page title={title} />
   );
 }

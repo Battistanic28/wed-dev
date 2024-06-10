@@ -1,11 +1,9 @@
-import AppBar from "@/components/AppBar";
 import Page from "@/components/Page";
+import config from '../config/config.json'
 
-
-export default function Home() {
+export default function ResourcePage() {
+  const { title } = config.HOME
   return (
-    <Page>
-      <h1>Nick & Kitty</h1>
-    </Page>
+    <Page title={title} />
   );
 }

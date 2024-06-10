@@ -1,0 +1,36 @@
+{
+  "HOME": {
+    "title": "Home",
+    "description": ""
+  },
+  "RSVP": {
+    "title": "RSVP",
+    "description": "Please enter your name to match with our list"
+  },
+  "LODGING": {
+    "title": "Lodging",
+    "description": ""
+  },
+  "SCHEDULE": {
+    "title": "Schedule",
+    "description": ""
+  },
+  "RESOURCES": {
+    "title": "Resources",
+    "description": "",
+    "categories": [
+      {
+        "title": "Getting Here 🛸",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
+      },
+      {
+        "title": "Where to Stay 🏡",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
+      },
+      {
+        "title": "Things to Do 🚴",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
+      }
+    ]
+  }
+}
