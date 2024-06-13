@@ -17,7 +17,6 @@ const filter = attendees.filter(item => {
 
 
 export default function FormPropsTextFields() {
-  console.log(filter)
   return (
     <Page title={title} description={description}>
         <Box

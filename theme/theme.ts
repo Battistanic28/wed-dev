@@ -5,21 +5,23 @@ import { createTheme } from "@mui/material/styles";
 export const theme = createTheme();
 
 theme.typography.h1 = {
-    fontSize: '3rem',
+    fontSize: '2.5rem',
+    fontWeight: 'normal',
     '@media (min-width:600px)': {
-      fontSize: '3rem',
+      fontSize: '2.5rem',
     },
     [theme.breakpoints.up('md')]: {
-      fontSize: '2.4rem',
+      fontSize: '2.5rem',
     },
   };
 
   theme.typography.h2 = {
     fontSize: '1.5rem',
+    fontWeight: 'normal',
     '@media (min-width:600px)': {
       fontSize: '1.5rem',
     },
     [theme.breakpoints.up('md')]: {
-      fontSize: '2.4rem',
+      fontSize: 'rem',
     },
   };
