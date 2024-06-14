@@ -4,7 +4,7 @@ import { google } from 'googleapis'
 dotenv.config()
 const range = 'RSVP!A:B';
 
-export const getAttendees = async () => {
+export const GET = async () => {
     const auth = await google.auth.getClient({
         scopes:['https://www.googleapis.com/auth/spreadsheets.readonly']
     })
@@ -15,6 +15,6 @@ export const getAttendees = async () => {
         range,
     })
 
-    console.log(response.data.values)
-    return response
+    const data = response.data.values
+    return Response.json({data})
 }
