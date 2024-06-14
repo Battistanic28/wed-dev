@@ -1,41 +1,29 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Page from '@/components/Page';
-import config from '../../config/config.json'
-import { Button } from '@mui/material';
-
+import * as React from "react";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import Page from "@/components/Page";
+import config from "../../config/config.json";
+import { Button } from "@mui/material";
+import { getAttendees } from "@/api/helpers/getAttendees";
 
 const { title, description } = config.RSVP;
 
-// Initial array filtering approach
-// TODO: Move functions out of components
-const attendees = ["Barker", "Doe", "Blobins", "Blobins"]
-const filter = attendees.filter(item => {
-  return item === 'Blobins'
-})
-
-
-export default function FormPropsTextFields() {
+export default function RsvpPage() {
   return (
     <Page title={title} description={description}>
-        <Box
+      <Box
         component="form"
         sx={{
-            '& .MuiTextField-root': { m: 1, width: '25ch' },
+          "& .MuiTextField-root": { m: 1, width: "25ch" },
         }}
         noValidate
         autoComplete="off"
-        >
+      >
         <div>
-            <TextField
-            id="lastname"
-            label="Last name"
-            variant="standard"
-            />
-            <Button variant="outlined">Search</Button>
+          <TextField id="lastname" label="Last name" variant="standard" />
+          <Button variant="outlined">Search</Button>
         </div>
-        </Box>
+      </Box>
     </Page>
   );
 }

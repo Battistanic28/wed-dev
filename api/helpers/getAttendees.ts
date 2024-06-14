@@ -2,7 +2,7 @@ import dotenv from 'dotenv'
 import { google } from 'googleapis'
 
 dotenv.config()
-const range = 'Sheet1!A1:A2';
+const range = 'RSVP!A:B';
 
 export const getAttendees = async () => {
     const auth = await google.auth.getClient({
@@ -11,7 +11,7 @@ export const getAttendees = async () => {
     const sheets = google.sheets({version: 'v4', auth})
     const response = await sheets.spreadsheets.values.get({
         spreadsheetId: process.env.SHEETS_API_ID,
-        majorDimension: 'COLUMNS',
+        majorDimension: 'ROWS',
         range,
     })
 
