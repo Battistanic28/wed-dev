@@ -36,7 +36,7 @@ export default function CheckboxList({ entries }) {
             <ListItemAvatar>
               <Avatar />
             </ListItemAvatar>
-            <ListItemText id={labelId} primary={entry[0]} />
+            <ListItemText id={labelId} primary={entry} />
             <ListItemSecondaryAction>
               <Checkbox
                 edge="end"
