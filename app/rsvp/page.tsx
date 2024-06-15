@@ -6,7 +6,6 @@ import Page from "@/components/Page";
 import config from "../../config/config.json";
 import CheckboxList from "@/components/CheckboxList";
 import { Button } from "@mui/material";
-import { getAttendeesByLastName } from "@/api/helpers/getAttendeesByLastname";
 import { useState } from "react";
 
 export default function RsvpPage() {
@@ -19,8 +18,7 @@ export default function RsvpPage() {
   };
 
   const onClick = async () => {
-    const results = await getAttendeesByLastName(lastName);
-    setSearchResults(results);
+    return console.log('clicked')
   };
 
   return (
@@ -45,11 +43,6 @@ export default function RsvpPage() {
             Search
           </Button>
           <CheckboxList entries={searchResults} />
-          {/* TODO: create list component */}
-          {/* <p>Results</p>
-          {searchResults.map((entry, index) => (
-            <Box key={index}>{entry[0]}</Box>
-          ))} */}
         </div>
       </Box>
     </Page>
