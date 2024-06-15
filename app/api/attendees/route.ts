@@ -18,3 +18,7 @@ export const GET = async () => {
     const data = response.data.values
     return Response.json({data})
 }
+
+export const PATCH = async () => {
+    return null
+}

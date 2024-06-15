@@ -1,16 +1,27 @@
-'use client'
+"use client";
 import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Page from "@/components/Page";
 import config from "../../config/config.json";
 import { Button } from "@mui/material";
-
-
-const { title, description } = config.RSVP;
-const onClick = () => console.log('clicked')
+import { getAttendeesByLastName } from "@/api/helpers/getAttendeesByLastname";
+import { useState } from "react";
 
 export default function RsvpPage() {
+  const { title, description } = config.RSVP;
+  const [lastName, setLastName] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
+  const handleLastNameChange = (event) => {
+    setLastName(event.target.value);
+  };
+
+  const onClick = async () => {
+    const results = await getAttendeesByLastName(lastName);
+    setSearchResults(results);
+  };
+
   return (
     <Page title={title} description={description}>
       <Box
@@ -22,8 +33,20 @@ export default function RsvpPage() {
         autoComplete="off"
       >
         <div>
-          <TextField id="lastname" label="Last name" variant="standard" />
-          <Button onClick={onClick} variant="outlined">Search</Button>
+          <TextField
+            id="lastname"
+            label="Last name"
+            variant="standard"
+            value={lastName}
+            onChange={handleLastNameChange}
+          />
+          <Button onClick={onClick} variant="outlined">
+            Search
+          </Button>
+          <p>Results</p>
+          {searchResults.map((entry, index) => (
+            <Box key={index}>{entry[0]}</Box>
+          ))}
         </div>
       </Box>
     </Page>
