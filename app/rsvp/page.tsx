@@ -7,18 +7,22 @@ import config from "../../config/config.json";
 import CheckboxList from "@/components/CheckboxList";
 import { Button } from "@mui/material";
 import { useState } from "react";
+import getGuestsByLastName from "@/api/helpers/getGuestsByLastName";
+import postGuestResponse from "@/api/helpers/postGuestResponse";
+
 
 export default function RsvpPage() {
   const { title, description } = config.RSVP;
   const [lastName, setLastName] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
-  const handleLastNameChange = (event) => {
+  const handleLastNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLastName(event.target.value);
   };
 
   const onClick = async () => {
-    return console.log('clicked')
+    const results =  await getGuestsByLastName(lastName)
+    setSearchResults(results)
   };
 
   return (
@@ -31,19 +35,18 @@ export default function RsvpPage() {
         noValidate
         autoComplete="off"
       >
-        <div>
+        <Box sx={{display: 'flex'}}>
           <TextField
             id="lastname"
             label="Last name"
-            variant="standard"
             value={lastName}
             onChange={handleLastNameChange}
           />
-          <Button onClick={onClick} variant="outlined">
+          <Button onClick={onClick}>
             Search
           </Button>
-          <CheckboxList entries={searchResults} />
-        </div>
+        </Box>
+        <CheckboxList entries={searchResults} />
       </Box>
     </Page>
   );

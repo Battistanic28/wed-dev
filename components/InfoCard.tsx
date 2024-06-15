@@ -5,9 +5,14 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Tilt_Neon } from "next/font/google";
 
-export default function InfoCard({ title, description }) {
+
+interface InfoCardProps {
+  title: string;
+  description: string;
+}
+
+export default function InfoCard({ title, description }: InfoCardProps) {
   return (
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
