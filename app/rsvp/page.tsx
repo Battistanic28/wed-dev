@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Page from "@/components/Page";
 import config from "../../config/config.json";
+import CheckboxList from "@/components/CheckboxList";
 import { Button } from "@mui/material";
 import { getAttendeesByLastName } from "@/api/helpers/getAttendeesByLastname";
 import { useState } from "react";
@@ -43,10 +44,12 @@ export default function RsvpPage() {
           <Button onClick={onClick} variant="outlined">
             Search
           </Button>
-          <p>Results</p>
+          <CheckboxList entries={searchResults} />
+          {/* TODO: create list component */}
+          {/* <p>Results</p>
           {searchResults.map((entry, index) => (
             <Box key={index}>{entry[0]}</Box>
-          ))}
+          ))} */}
         </div>
       </Box>
     </Page>
