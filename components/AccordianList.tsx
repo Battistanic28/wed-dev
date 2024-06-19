@@ -7,8 +7,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 interface AccordianListProps {
   items: {
-    title: string;
-    description: string;
+    title: string,
+    description: string,
   }[];
 }
 

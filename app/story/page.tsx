@@ -3,7 +3,5 @@ import config from '../../config/config.json';
 
 export default function StoryPage() {
   const { title } = config.STORY;
-  return (
-    <Page title={title} />
-  );
+  return <Page title={title} />;
 }

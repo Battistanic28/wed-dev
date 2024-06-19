@@ -1,11 +1,9 @@
 import React from 'react';
-import {
-  List, ListItem, Box, Button, Typography,
-} from '@mui/material';
+import { List, ListItem, Box, Button, Typography } from '@mui/material';
 
 type Group = {
-  full_name: string;
-  response: 'yes' | 'no' | 'no response';
+  full_name: string,
+  response: 'yes' | 'no' | 'no response',
 }[];
 
 interface ResponseFormProps {
@@ -13,7 +11,10 @@ interface ResponseFormProps {
   setResponses: any;
 }
 
-export default function ResponseForm({ selectedGroup, setResponses }: ResponseFormProps) {
+export default function ResponseForm({
+  selectedGroup,
+  setResponses,
+}: ResponseFormProps) {
   // TODO: following submission - thank for registering and display list of responses
   const registerEntry = (fullName: string, response: string) => {
     setResponses((prevResponses: Group) => [

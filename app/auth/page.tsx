@@ -6,10 +6,13 @@ export default function ResourcePage() {
 
   return (
     <>
-      <Typography variant="h1" sx={{ display: 'flex', justifyContent: 'center' }}>Nick & Kitty</Typography>
-      <Typography variant="h2">
-        {title}
+      <Typography
+        variant="h1"
+        sx={{ display: 'flex', justifyContent: 'center' }}
+      >
+        Nick & Kitty
       </Typography>
+      <Typography variant="h2">{title}</Typography>
     </>
   );
 }

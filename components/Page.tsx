@@ -17,14 +17,15 @@ const Page: React.FC<PageProps> = ({ children, title, description }) => {
   }
   return (
     <>
-      <Typography variant="h1" sx={{ display: 'flex', justifyContent: 'center' }}>Nick & Kitty</Typography>
+      <Typography
+        variant="h1"
+        sx={{ display: 'flex', justifyContent: 'center' }}
+      >
+        Nick & Kitty
+      </Typography>
       <NavBar />
-      <Typography variant="h2">
-        {title}
-      </Typography>
-      <Typography variant="body2">
-        {description}
-      </Typography>
+      <Typography variant="h2">{title}</Typography>
+      <Typography variant="body2">{description}</Typography>
       <Box>{children}</Box>
     </>
   );
