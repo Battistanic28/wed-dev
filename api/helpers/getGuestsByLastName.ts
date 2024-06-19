@@ -17,6 +17,7 @@ const getGuestsByLastName = async (lastName: string) => {
     return rows;
   } catch (error) {
     console.error("Error fetching guests:", error);
+    return []; 
   }
 };
 
