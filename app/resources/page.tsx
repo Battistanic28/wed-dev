@@ -1,11 +1,11 @@
-import Page from "@/components/Page";
-import config from '../../config/config.json'
-import AccordianList from "@/components/AccordianList";
+import Page from '@/components/Page';
+import AccordianList from '@/components/AccordianList';
+import config from '../../config/config.json';
 
 export default function ResourcePage() {
-  const { title, categories } = config.RESOURCES
+  const { title, categories } = config.RESOURCES;
   return (
-    <Page title={title} >
+    <Page title={title}>
       <AccordianList items={categories} />
     </Page>
   );

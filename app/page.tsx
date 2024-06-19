@@ -1,10 +1,9 @@
-import Page from "@/components/Page";
-import config from '../config/config.json'
-import { Box, Typography } from "@mui/material";
-
+import Page from '@/components/Page';
+import { Box, Typography } from '@mui/material';
+import config from '../config/config.json';
 
 export default function ResourcePage() {
-  const { title, description } = config.HOME
+  const { title, description } = config.HOME;
   return (
     <Page title={title} description={description}>
       <Box>

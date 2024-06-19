@@ -21,6 +21,12 @@ Data is fetched from the Guests api at `{base_url}api/guests`
 - `GET` - retrieves guestlist entries filtered by `last_name` query parameter.
 - `POST` - updates guestlist entry response ('yes'/'no').
 
+## Lint
+To run the linter and resolve any fixable issues,
+```bash
+npm run lint:fix
+```
+
 ## Testing
 This project uses `jest` and `React Testing Library` for coverage.
 

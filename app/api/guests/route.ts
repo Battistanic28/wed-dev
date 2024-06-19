@@ -1,10 +1,10 @@
-import { sql } from "@vercel/postgres";
-import { NextResponse, NextRequest } from "next/server";
+import { sql } from '@vercel/postgres';
+import { NextResponse, NextRequest } from 'next/server';
 
 // GET query guests by last name
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
-  const lastName = searchParams.get("last_name");
+  const lastName = searchParams.get('last_name');
   try {
     const result = await sql`
               SELECT *
@@ -28,6 +28,6 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ status: 200 });
   } catch (error) {
-    return NextResponse.json({ error: error }, { status: 500 });
+    return NextResponse.json({ error }, { status: 500 });
   }
 }
