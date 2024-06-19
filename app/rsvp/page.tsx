@@ -4,25 +4,33 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Page from "@/components/Page";
 import config from "../../config/config.json";
-import CheckboxList from "@/components/CheckboxList";
+import ResponseForm from "@/components/ResponseForm";
 import { Button } from "@mui/material";
 import { useState } from "react";
 import getGuestsByLastName from "@/api/helpers/getGuestsByLastName";
 import postGuestResponse from "@/api/helpers/postGuestResponse";
-
+import GroupSelectList from "@/components/GroupSelectList";
+import { ResponseData } from "@/api/helpers/postGuestResponse";
 
 export default function RsvpPage() {
   const { title, description } = config.RSVP;
   const [lastName, setLastName] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [responses, setResponses] = useState<ResponseData>([]);
+  const [group, setGroup] = useState([]);
 
   const handleLastNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLastName(event.target.value);
   };
 
   const onClick = async () => {
-    const results =  await getGuestsByLastName(lastName)
-    setSearchResults(results)
+    const results = await getGuestsByLastName(lastName);
+    setSearchResults(results);
+  };
+
+  const onSubmit = async () => {
+    console.log(responses)
+    await postGuestResponse(responses);
   };
 
   return (
@@ -35,19 +43,21 @@ export default function RsvpPage() {
         noValidate
         autoComplete="off"
       >
-        <Box sx={{display: 'flex'}}>
+        <Box sx={{ display: "flex" }}>
           <TextField
             id="lastname"
             label="Last name"
             value={lastName}
             onChange={handleLastNameChange}
           />
-          <Button onClick={onClick}>
-            Search
-          </Button>
+          <Button onClick={onClick}>Search</Button>
         </Box>
-        <CheckboxList entries={searchResults} />
+        <GroupSelectList results={searchResults} setGroup={setGroup} />
+        <ResponseForm selectedGroup={group} setResponses={setResponses} />
       </Box>
+      <Button type="submit" onClick={onSubmit}>
+        Submit
+      </Button>
     </Page>
   );
 }
