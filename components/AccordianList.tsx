@@ -5,7 +5,14 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-export default function AccordianList({ items }) {
+interface AccordianListProps {
+  items: {
+    title: string;
+    description: string;
+  }[];
+}
+
+export default function AccordianList({ items }: AccordianListProps) {
   return (
     <div>
       {items.map((item, idx) => (

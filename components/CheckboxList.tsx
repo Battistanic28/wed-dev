@@ -3,51 +3,57 @@ import React from "react";
 import {
   List,
   ListItem,
-  ListItemText,
-  Checkbox,
-  ListItemAvatar,
-  Avatar,
-  ListItemSecondaryAction
+  Box,
+  Button
 } from "@mui/material";
+import postGuestResponse from '@/api/helpers/postGuestResponse';
 
+interface CheckboxListProps {
+  entries: {
+    first_name: string;
+    last_name: string;
+    full_name: string;
+    response: "yes" | "no" | "no response";
+  }[]
+}
 
-export default function CheckboxList({ entries }) {
-  const [checked, setChecked] = useState([1]);
+type Response = {
+  full_name: string;
+  response: string;
+};
 
-  const handleToggle = (entry: number) => () => {
-    const currentIndex = checked.indexOf(entry);
-    const newChecked = [...checked];
+// TODO: harden rsvp form
+export default function CheckboxList({ entries }: CheckboxListProps) {
+  const [responses, setResponses] = useState<Response[]>([]);
 
-    if (currentIndex === -1) {
-      newChecked.push(entry);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
+  const onClick = (fullName: string, response: string) => {
+    setResponses(prevResponses => [
+      ...prevResponses,
+      {
+        full_name: fullName,
+        response: response
+      }
+    ])
+  }
 
-    setChecked(newChecked);
-  };
+  const onSubmit = async () => {
+    await postGuestResponse(responses)
+  }
 
   return (
     <List>
-      {entries.map((entry) => {
-        const labelId = `checkbox-list-secondary-label-${entry}`;
+      {entries.map((entry, idx) => {
         return (
-          <ListItem key={entry} onClick={handleToggle(entry)}>
-            <ListItemAvatar>
-              <Avatar />
-            </ListItemAvatar>
-            <ListItemText id={labelId} primary={entry} />
-            <ListItemSecondaryAction>
-              <Checkbox
-                edge="end"
-                onChange={handleToggle(entry)}
-                checked={checked.indexOf(entry) !== -1}
-                inputProps={{ "aria-labelledby": labelId }}
-              />
-            </ListItemSecondaryAction>
-          </ListItem>
+            <ListItem key={entry.full_name}>
+              <Box>
+                {entry.full_name}
+                <Button onClick={() => onClick(entry.full_name, 'Yes')}>Yes</Button>
+                <Button onClick={() => onClick(entry.full_name, 'No')}>No</Button>
+              </Box>
+            </ListItem>
         );
       })}
+      <Button type='submit' onClick={onSubmit}>Submit</Button>
     </List>
   );
 }

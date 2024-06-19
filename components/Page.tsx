@@ -1,3 +1,4 @@
+import React, { ReactNode } from 'react';
 import NavBar from "./NavBar";
 import { Box } from "@mui/material";
 import { Typography } from "@mui/material";
@@ -5,7 +6,13 @@ import { redirect } from 'next/navigation';
 
 const token = true
 
-export default function Page({ children, title, description }) {
+interface PageProps {
+  children?: ReactNode;
+  title: string;
+  description?: string;
+}
+
+const Page: React.FC<PageProps> = ({ children, title, description }) => {
   if (!token) {
     return redirect('/auth')
   }
@@ -23,3 +30,5 @@ export default function Page({ children, title, description }) {
     </>
   );
 }
+
+export default Page;
