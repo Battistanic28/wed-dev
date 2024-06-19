@@ -1,20 +1,20 @@
-"use client";
-import * as React from "react";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import Page from "@/components/Page";
-import config from "../../config/config.json";
-import ResponseForm from "@/components/ResponseForm";
-import { Button } from "@mui/material";
-import { useState } from "react";
-import getGuestsByLastName from "@/api/helpers/getGuestsByLastName";
-import postGuestResponse from "@/api/helpers/postGuestResponse";
-import GroupSelectList from "@/components/GroupSelectList";
-import { ResponseData } from "@/api/helpers/postGuestResponse";
+'use client';
+
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Page from '@/components/Page';
+import ResponseForm from '@/components/ResponseForm';
+import { Button } from '@mui/material';
+import { useState } from 'react';
+import getGuestsByLastName from '@/api/helpers/getGuestsByLastName';
+import postGuestResponse, { ResponseData } from '@/api/helpers/postGuestResponse';
+import GroupSelectList from '@/components/GroupSelectList';
+import config from '../../config/config.json';
 
 export default function RsvpPage() {
   const { title, description } = config.RSVP;
-  const [lastName, setLastName] = useState("");
+  const [lastName, setLastName] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [responses, setResponses] = useState<ResponseData>([]);
   const [group, setGroup] = useState([]);
@@ -29,7 +29,7 @@ export default function RsvpPage() {
   };
 
   const onSubmit = async () => {
-    console.log(responses)
+    console.log(responses);
     await postGuestResponse(responses);
   };
 
@@ -38,12 +38,12 @@ export default function RsvpPage() {
       <Box
         component="form"
         sx={{
-          "& .MuiTextField-root": { m: 1, width: "25ch" },
+          '& .MuiTextField-root': { m: 1, width: '25ch' },
         }}
         noValidate
         autoComplete="off"
       >
-        <Box sx={{ display: "flex" }}>
+        <Box sx={{ display: 'flex' }}>
           <TextField
             id="lastname"
             label="Last name"

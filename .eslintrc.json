@@ -1,3 +1,11 @@
 {
-  "extends": ["eslint:recommended", "next"]
+  "extends": [
+    "eslint:recommended",
+    "next",
+    "airbnb",
+    "airbnb-typescript"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
 }
