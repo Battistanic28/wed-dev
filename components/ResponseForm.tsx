@@ -1,4 +1,3 @@
-import { useState } from "react";
 import React from "react";
 import { List, ListItem, Box, Button, Typography } from "@mui/material";
 
@@ -30,7 +29,7 @@ export default function ResponseForm({ selectedGroup, setResponses }: ResponseFo
     <>
       <Typography>Group</Typography>
       <List>
-        {selectedGroup.map((entry, idx) => {
+        {selectedGroup.map((entry) => {
           return (
             <ListItem key={entry.full_name}>
               <Box>

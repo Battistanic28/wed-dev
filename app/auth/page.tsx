@@ -1,4 +1,3 @@
-import Page from "@/components/Page";
 import config from '../../config/config.json'
 import { Typography } from "@mui/material";
 
