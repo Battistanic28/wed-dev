@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react';
 import { Box, Typography } from '@mui/material';
-import { redirect } from 'next/navigation';
 import NavBar from './NavBar';
+import PasswordForm from './PasswordForm';
 
-const token = true;
+const authorized = false;
 
 interface PageProps {
   children?: ReactNode;
@@ -12,9 +12,6 @@ interface PageProps {
 }
 
 const Page: React.FC<PageProps> = ({ children, title, description }) => {
-  if (!token) {
-    return redirect('/auth');
-  }
   return (
     <>
       <Typography
@@ -23,10 +20,16 @@ const Page: React.FC<PageProps> = ({ children, title, description }) => {
       >
         Nick & Kitty
       </Typography>
-      <NavBar />
-      <Typography variant="h2">{title}</Typography>
-      <Typography variant="body2">{description}</Typography>
-      <Box>{children}</Box>
+      {authorized ? (
+        <>
+          <NavBar />
+          <Typography variant="h2">{title}</Typography>
+          <Typography variant="body2">{description}</Typography>
+          <Box>{children}</Box>
+        </>
+      ) : (
+        <PasswordForm />
+      )}
     </>
   );
 };
