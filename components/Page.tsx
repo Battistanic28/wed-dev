@@ -1,9 +1,9 @@
-import React, { ReactNode } from 'react';
+'use client';
+
+import React, { ReactNode, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import NavBar from './NavBar';
 import PasswordForm from './PasswordForm';
-
-const authorized = false;
 
 interface PageProps {
   children?: ReactNode;
@@ -12,6 +12,8 @@ interface PageProps {
 }
 
 const Page: React.FC<PageProps> = ({ children, title, description }) => {
+  const [isAuthorized, setIsAuthorized] = useState(false);
+
   return (
     <>
       <Typography
@@ -20,7 +22,7 @@ const Page: React.FC<PageProps> = ({ children, title, description }) => {
       >
         Nick & Kitty
       </Typography>
-      {authorized ? (
+      {isAuthorized ? (
         <>
           <NavBar />
           <Typography variant="h2">{title}</Typography>
@@ -28,7 +30,7 @@ const Page: React.FC<PageProps> = ({ children, title, description }) => {
           <Box>{children}</Box>
         </>
       ) : (
-        <PasswordForm />
+        <PasswordForm setIsAuthorized={setIsAuthorized} />
       )}
     </>
   );
