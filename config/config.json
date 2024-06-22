@@ -1,8 +1,4 @@
 {
-  "AUTH": {
-    "title": "Please enter password",
-    "description": ""
-  },
   "HOME": {
     "title": "Home",
     "description": "Add description here"
