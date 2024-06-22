@@ -31,7 +31,6 @@ export default function RsvpPage() {
   };
 
   const onSubmit = async () => {
-    console.log(responses);
     await postGuestResponse(responses);
   };
 
