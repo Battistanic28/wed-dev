@@ -9,29 +9,33 @@ import {
   IconButton,
   Button,
 } from '@mui/material';
-import { useState, MouseEvent } from 'react';
+import { useState, MouseEvent, ChangeEvent, FormEvent } from 'react';
 
-const PasswordForm = ({ setIsAuthorized }) => {
+interface PasswordFormProps {
+  // eslint-disable-next-line no-unused-vars
+  setIsAuthorized: (isAuthorized: boolean) => void;
+}
 
+const PasswordForm = ({ setIsAuthorized }: PasswordFormProps) => {
   const topSecret = process.env.NEXT_PUBLIC_APP_PASSWORD;
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState('');
-
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
-  const handleMouseDownPassword = (event) => {
+  const handleMouseDownPassword = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
   };
 
-  const handlePasswordChange = (event) => {
+  const handlePasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
   };
 
-  const checkPassword = (event) => {
+  const checkPassword = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (password === topSecret) {
       setIsAuthorized(true);
+      localStorage.setItem('secret', password);
     } else {
       setIsAuthorized(false);
     }

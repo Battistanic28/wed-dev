@@ -12,7 +12,11 @@ interface PageProps {
 }
 
 const Page: React.FC<PageProps> = ({ children, title, description }) => {
-  const [isAuthorized, setIsAuthorized] = useState(false);
+  let initialAuthValue = false;
+  if (typeof window !== 'undefined') {
+    initialAuthValue = Boolean(localStorage.getItem('secret'));
+  }
+  const [isAuthorized, setIsAuthorized] = useState<boolean>(initialAuthValue);
 
   return (
     <>
