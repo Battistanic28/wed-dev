@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use client';
 
 import { VisibilityOff, Visibility } from '@mui/icons-material';
@@ -12,11 +13,14 @@ import {
 import { useState, MouseEvent, ChangeEvent, FormEvent } from 'react';
 
 interface PasswordFormProps {
-  // eslint-disable-next-line no-unused-vars
   setIsAuthorized: (isAuthorized: boolean) => void;
+  setIsPasswordErrored: (isPassowordErrored: boolean) => void;
 }
 
-const PasswordForm = ({ setIsAuthorized }: PasswordFormProps) => {
+const PasswordForm = ({
+  setIsAuthorized,
+  setIsPasswordErrored,
+}: PasswordFormProps) => {
   const topSecret = process.env.NEXT_PUBLIC_APP_PASSWORD;
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState('');
@@ -37,6 +41,7 @@ const PasswordForm = ({ setIsAuthorized }: PasswordFormProps) => {
       setIsAuthorized(true);
       localStorage.setItem('secret', password);
     } else {
+      setIsPasswordErrored(true);
       setIsAuthorized(false);
     }
   };

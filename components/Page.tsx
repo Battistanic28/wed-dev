@@ -16,6 +16,7 @@ const Page: React.FC<PageProps> = ({ children, title, description }) => {
   if (typeof window !== 'undefined') {
     initialAuthValue = Boolean(localStorage.getItem('secret'));
   }
+  const [isPassowordErrored, setIsPasswordErrored] = useState<boolean>(false);
   const [isAuthorized, setIsAuthorized] = useState<boolean>(initialAuthValue);
 
   return (
@@ -34,7 +35,15 @@ const Page: React.FC<PageProps> = ({ children, title, description }) => {
           <Box>{children}</Box>
         </>
       ) : (
-        <PasswordForm setIsAuthorized={setIsAuthorized} />
+        <>
+          <PasswordForm
+            setIsAuthorized={setIsAuthorized}
+            setIsPasswordErrored={setIsPasswordErrored}
+          />
+          {isPassowordErrored && (
+            <Typography>The password you entered is incorrect</Typography>
+          )}
+        </>
       )}
     </>
   );
