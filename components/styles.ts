@@ -23,6 +23,7 @@ const NavIcon: SxProps = {
 };
 
 const NavLinks: SxProps = {
+  // textAlign: 'center',
   display: 'flex',
   gap: 2,
 };

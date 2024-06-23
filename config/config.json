@@ -1,22 +1,27 @@
 {
   "HOME": {
     "title": "Home",
+    "href": "/",
     "description": "Add description here"
   },
   "RSVP": {
     "title": "RSVP",
+    "href": "/rsvp",
     "description": "Search by last name and select any members of your group! You can change your response at any time."
   },
   "STORY": {
     "title": "Story",
+    "href": "/story",
     "description": ""
   },
   "SCHEDULE": {
     "title": "Schedule",
+    "href": "/schedule",
     "description": ""
   },
   "RESOURCES": {
     "title": "Resources",
+    "href": "/resources",
     "description": "",
     "categories": [
       {
