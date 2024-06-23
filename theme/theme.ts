@@ -22,7 +22,7 @@ theme.typography.h2 = {
     fontSize: '1.5rem',
   },
   [theme.breakpoints.up('md')]: {
-    fontSize: 'rem',
+    fontSize: '1rem',
   },
 };
 
@@ -33,6 +33,6 @@ theme.typography.body1 = {
     fontSize: '.75rem',
   },
   [theme.breakpoints.up('md')]: {
-    fontSize: 'rem',
+    fontSize: '1rem',
   },
 };

@@ -3,15 +3,13 @@ import { SxProps } from '@mui/material';
 // Page
 const PageBody: SxProps = {
   textAlign: 'center',
-  margin: 'auto',
 };
 
 const PageContent: SxProps = {
-  marginTop: 3,
+  // marginTop: 3,
 };
 
 // NavBar
-
 const NavContent: SxProps = {
   display: 'flex',
   justifyContent: 'space-between',

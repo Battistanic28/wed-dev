@@ -8,7 +8,8 @@ interface NavLinkProps {
 
 export default function NavLink({ title, href }: NavLinkProps) {
   return (
-    <Link style={{ textDecoration: 'none' }} href={href}>
+    // Refactor to apply sx props
+    <Link style={{ textDecoration: 'none', color: 'inherit' }} href={href}>
       <Typography variant="body1">{title}</Typography>
     </Link>
   );
