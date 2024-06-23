@@ -1,6 +1,4 @@
 /* eslint-disable no-unused-vars */
-'use client';
-
 import { VisibilityOff, Visibility } from '@mui/icons-material';
 import {
   FormControl,
