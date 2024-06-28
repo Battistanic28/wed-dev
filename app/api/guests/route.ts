@@ -4,12 +4,12 @@ import { NextResponse, NextRequest } from 'next/server';
 // GET query guests by last name
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
-  const lastName = searchParams.get('last_name');
+  const lastName = searchParams.get('last_name')?.toUpperCase();
   try {
     const result = await sql`
               SELECT *
               FROM guests
-              WHERE last_name LIKE ${lastName};`;
+              WHERE UPPER(last_name) LIKE ${lastName};`;
     return NextResponse.json({ result }, { status: 200 });
   } catch (error) {
     return NextResponse.json({ error }, { status: 500 });

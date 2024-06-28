@@ -1,10 +1,11 @@
 const getGuestsByLastName = async (lastName: string) => {
   try {
     const res = await fetch(
-      "/api/guests?" + new URLSearchParams({ last_name: lastName }),
+      '/api/guests?' +
+        new URLSearchParams({ last_name: lastName.toUpperCase() }),
       {
-        method: "GET",
-      }
+        method: 'GET',
+      },
     );
 
     if (!res.ok) {
@@ -16,8 +17,8 @@ const getGuestsByLastName = async (lastName: string) => {
 
     return rows;
   } catch (error) {
-    console.error("Error fetching guests:", error);
-    return []; 
+    console.error('Error fetching guests:', error);
+    return [];
   }
 };
 
