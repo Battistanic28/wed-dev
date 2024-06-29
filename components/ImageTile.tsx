@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Box, Typography } from '@mui/material';
+import { ImageOverlayText } from './styles';
 
 interface ImageTileProps {
   src: string;
@@ -9,15 +10,6 @@ interface ImageTileProps {
 }
 
 const ImageTile = ({ src, alt, title, subtitle }: ImageTileProps) => {
-  const textProps = {
-    position: 'absolute',
-    top: '20%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    color: 'white',
-    textAlign: 'center',
-  };
-
   return (
     <Box position="relative" width="100%">
       <Image
@@ -26,9 +18,14 @@ const ImageTile = ({ src, alt, title, subtitle }: ImageTileProps) => {
         width={0}
         height={0}
         sizes="100vw"
-        style={{ width: '100%', height: 'auto' }}
+        style={{
+          width: '100%',
+          height: 'auto',
+          borderRadius: '4px',
+          boxShadow: '10px',
+        }}
       />
-      <Box sx={textProps}>
+      <Box sx={ImageOverlayText}>
         {title && <Typography variant="h2">{title}</Typography>}
         {subtitle && <Typography variant="h3">{subtitle}</Typography>}
       </Box>

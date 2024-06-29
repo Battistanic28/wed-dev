@@ -38,6 +38,16 @@ const PageContent: SxProps = {
   // Add any other styles you need for PageContent
 };
 
+// ImageTile
+const ImageOverlayText = {
+  position: 'absolute',
+  top: '20%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  color: 'white',
+  textAlign: 'center',
+};
+
 // Nav
 const NavContent: SxProps = {
   display: 'flex',
@@ -62,4 +72,5 @@ export {
   NavContent,
   NavIcon,
   NavLinks,
+  ImageOverlayText,
 };
