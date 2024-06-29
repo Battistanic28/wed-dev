@@ -19,7 +19,8 @@ const PageBody: SxProps = {
   backgroundColor: 'white',
   borderRadius: 2,
   boxShadow: 3,
-  padding: 3,
+  paddingLeft: 3,
+  paddingRight: 3,
   maxWidth: '700px',
 };
 

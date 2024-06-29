@@ -10,7 +10,7 @@ export default function NavBar() {
   const isMobile = useMediaQuery('(max-width:700px)');
 
   return (
-    <Toolbar sx={NavContent}>
+    <Toolbar sx={NavContent} variant="dense">
       <Typography sx={NavIcon} variant="h5">
         N + K
       </Typography>
