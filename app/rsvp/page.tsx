@@ -7,7 +7,7 @@ import Page from '@/components/Page';
 import ResponseForm from '@/components/ResponseForm';
 import { Button } from '@mui/material';
 import { useState } from 'react';
-import getGuestsByLastName from '@/api/helpers/getGuestsByLastName';
+import getGuestsByFullName from '@/api/helpers/getGuestsByFullName';
 import postGuestResponse, {
   ResponseData,
 } from '@/api/helpers/postGuestResponse';
@@ -16,17 +16,17 @@ import config from '../../config/config.json';
 
 export default function RsvpPage() {
   const { title, description } = config.RSVP;
-  const [lastName, setLastName] = useState('');
+  const [fullName, setFullName] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [responses, setResponses] = useState<ResponseData>([]);
   const [group, setGroup] = useState([]);
 
   const handleLastNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setLastName(event.target.value);
+    setFullName(event.target.value);
   };
 
   const onClick = async () => {
-    const results = await getGuestsByLastName(lastName);
+    const results = await getGuestsByFullName(fullName);
     setSearchResults(results);
   };
 
@@ -46,9 +46,9 @@ export default function RsvpPage() {
       >
         <Box sx={{ display: 'flex' }}>
           <TextField
-            id="lastname"
-            label="Last name"
-            value={lastName}
+            id="full_name"
+            label="Full name"
+            value={fullName}
             onChange={handleLastNameChange}
           />
           <Button onClick={onClick}>Search</Button>

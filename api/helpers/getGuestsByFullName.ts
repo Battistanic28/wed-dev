@@ -1,8 +1,8 @@
-const getGuestsByLastName = async (lastName: string) => {
+const getGuestsByFullName = async (fullName: string) => {
   try {
     const res = await fetch(
       '/api/guests?' +
-        new URLSearchParams({ last_name: lastName.toUpperCase() }),
+        new URLSearchParams({ full_name: fullName.toUpperCase() }),
       {
         method: 'GET',
       },
@@ -22,4 +22,4 @@ const getGuestsByLastName = async (lastName: string) => {
   }
 };
 
-export default getGuestsByLastName;
+export default getGuestsByFullName;

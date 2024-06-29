@@ -4,7 +4,7 @@ import config from '../../config/config.json';
 export default function RegistryPage() {
   const { title } = config.REGISTRY;
   const registryUrl = process.env.REGISTRY_URL || '/';
-  console.log(registryUrl);
+
   return (
     <Page title={title}>
       Check out our registry on Zola!
