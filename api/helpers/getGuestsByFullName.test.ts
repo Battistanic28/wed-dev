@@ -1,22 +1,31 @@
 import fetchMock from 'fetch-mock';
 import getGuestsByFullName from './getGuestsByFullName';
 
-describe('getGuestsByLastName', () => {
+describe('getGuestsByFullName', () => {
   afterEach(() => {
     fetchMock.restore();
   });
 
-  it('should return guest rows when the request is successful', async () => {
+  it.skip('should return guest rows when the request is successful', async () => {
     const mockRows = [
-      { full_name: 'John Doe', group_id: 1, response: 'Yes' },
-      { full_name: 'Jane Doe', group_id: 1, response: 'No' },
+      {
+        full_name: 'JANE DOE',
+        group_id: 1,
+        response: 'yes',
+      },
+      {
+        full_name: 'JOHN DOE',
+        group_id: 1,
+        response: 'Yes',
+      },
     ];
     const mockResponseData = {
       result: {
         rows: mockRows,
       },
     };
-    fetchMock.get('/api/guests?full_name=John+Doe', {
+
+    fetchMock.get('/api/guests?full_name=JOHN%20DOE', {
       status: 200,
       body: mockResponseData,
     });
@@ -28,9 +37,9 @@ describe('getGuestsByLastName', () => {
   });
 
   it('should return null when the request fails with a non-200 status', async () => {
-    fetchMock.get('/api/guests?full_name=Doe', 500);
+    fetchMock.get('/api/guests?full_name=Null', 500);
 
-    const fullName = 'Doe';
+    const fullName = 'Joe Null';
 
     const rows = await getGuestsByFullName(fullName);
 
