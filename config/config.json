@@ -42,5 +42,11 @@
   "REGISTRY": {
     "title": "Registry",
     "href": "/registry"
+  },
+  "CONTACT": {
+    "title": "Contact",
+    "href": "/contact",
+    "heading": "Contact us!",
+    "description": ""
   }
 }

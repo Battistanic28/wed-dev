@@ -13,12 +13,14 @@ const PageBackground: SxProps = {
 };
 
 const PageBody: SxProps = {
-  width: '80%',
+  height: '90vh',
+  width: '75%',
   textAlign: 'center',
   backgroundColor: 'white',
   borderRadius: 2,
   boxShadow: 3,
   padding: 3,
+  maxWidth: '700px',
 };
 
 const PageContent: SxProps = {

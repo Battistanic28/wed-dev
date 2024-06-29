@@ -4,6 +4,7 @@ import { createTheme } from '@mui/material/styles';
 
 export const theme = createTheme();
 
+// Typography
 theme.typography.h1 = {
   fontSize: '2.5rem',
   fontWeight: 'normal',
@@ -35,4 +36,13 @@ theme.typography.body1 = {
   [theme.breakpoints.up('md')]: {
     fontSize: '1rem',
   },
+};
+
+// Breakpoints
+theme.breakpoints.values = {
+  xs: 0,
+  sm: 600,
+  md: 900,
+  lg: 1200,
+  xl: 1536,
 };
