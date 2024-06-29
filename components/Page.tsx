@@ -4,7 +4,13 @@ import React, { ReactNode, useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import NavBar from './NavBar';
 import PasswordForm from './PasswordForm';
-import { PageBackground, PageBody, PageContent } from './styles';
+import {
+  PageBackground,
+  PageBody,
+  PageContent,
+  BackgroundImage,
+} from './styles';
+import Image from 'next/image';
 
 interface PageProps {
   children?: ReactNode;
@@ -45,6 +51,14 @@ const Page: React.FC<PageProps> = ({ children }) => {
               )}
             </>
           )}
+        </Box>
+        <Box sx={BackgroundImage}>
+          <Image
+            fill
+            src="/poppies3.jpg"
+            alt="Image alt"
+            style={{ objectFit: 'cover' }}
+          />
         </Box>
       </Box>
     )

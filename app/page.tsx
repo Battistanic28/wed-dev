@@ -11,7 +11,7 @@ export default function ResourcePage() {
         src="/bridge.jpg"
         alt="bridge"
         title="Nick + Kitty"
-        subtitle="6.26.25"
+        subtitle="6 • 26 • 25"
       />
       <Box textAlign="center" mt={2}>
         <Button href="/rsvp" variant="contained" color="primary">

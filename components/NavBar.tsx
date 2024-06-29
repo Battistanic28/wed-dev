@@ -11,7 +11,7 @@ export default function NavBar() {
 
   return (
     <Toolbar sx={NavContent} variant="dense">
-      <Typography sx={NavIcon} variant="h5">
+      <Typography sx={NavIcon} variant="h2">
         N + K
       </Typography>
       {isMobile ? (

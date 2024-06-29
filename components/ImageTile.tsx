@@ -29,8 +29,8 @@ const ImageTile = ({ src, alt, title, subtitle }: ImageTileProps) => {
         style={{ width: '100%', height: 'auto' }}
       />
       <Box sx={textProps}>
-        {title && <Typography variant="h3">{title}</Typography>}
-        {subtitle && <Typography variant="h2">{subtitle}</Typography>}
+        {title && <Typography variant="h2">{title}</Typography>}
+        {subtitle && <Typography variant="h3">{subtitle}</Typography>}
       </Box>
     </Box>
   );
