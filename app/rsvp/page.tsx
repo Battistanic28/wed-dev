@@ -7,7 +7,7 @@ import Page from '@/components/Page';
 import ResponseForm from '@/components/ResponseForm';
 import { Button } from '@mui/material';
 import { useState } from 'react';
-import getGuestsByLastName from '@/api/helpers/getGuestsByLastName';
+import getGuestsByFullName from '@/api/helpers/getGuestsByFullName';
 import postGuestResponse, {
   ResponseData,
 } from '@/api/helpers/postGuestResponse';
@@ -26,7 +26,7 @@ export default function RsvpPage() {
   };
 
   const onClick = async () => {
-    const results = await getGuestsByLastName(fullName);
+    const results = await getGuestsByFullName(fullName);
     setSearchResults(results);
   };
 
