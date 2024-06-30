@@ -11,6 +11,9 @@ const schoolbell = Schoolbell({
   weight: '400',
 });
 
+// Palette
+// Add color palette
+
 // Typography
 theme.typography.h1 = {
   fontSize: '2.5rem',

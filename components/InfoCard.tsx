@@ -12,16 +12,13 @@ interface InfoCardProps {
 
 export default function InfoCard({ title, description }: InfoCardProps) {
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <Card sx={{ margin: 1, backgroundColor: '#FC9007' }}>
       <CardContent>
-        <Typography variant="h5" component="div">
+        <Typography variant="body2" component="div">
           {title}
         </Typography>
         <Typography variant="body2">{description}</Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Map</Button>
-      </CardActions>
     </Card>
   );
 }

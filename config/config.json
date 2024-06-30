@@ -27,7 +27,17 @@
     "categories": [
       {
         "title": "Getting Here 🛸",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+        "children": [
+          {
+            "title": "Find flights",
+            "content": "🛩️"
+          },
+          {
+            "title": "See Map",
+            "content": "🗺️"
+          }
+        ]
       },
       {
         "title": "Where to Stay 🏡",
