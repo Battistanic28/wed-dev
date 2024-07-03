@@ -8,10 +8,10 @@ export default function ResourcePage() {
   return (
     <Page title={heading} description={description}>
       <ImageTile
-        src="/bridge.jpg"
-        alt="bridge"
+        src="/boulder.jpg"
+        alt="boulder"
         title="Nick + Kitty"
-        subtitle="6.26.25"
+        subtitle="6 • 26 • 25"
       />
       <Box textAlign="center" mt={2}>
         <Button href="/rsvp" variant="contained" color="primary">
