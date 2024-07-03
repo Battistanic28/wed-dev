@@ -7,42 +7,36 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-function createData(
-  name: string,
-  calories: number,
-  fat: number,
-  carbs: number,
-  protein: number,
-) {
-  return { name, calories, fat, carbs, protein };
+interface DataTableProps {
+  tableData: {
+    columns: string[],
+    rows: string[][],
+  };
 }
 
-const rows = [
-  createData('Hotel Boulderado', '12 mi', '$$$'),
-  createData('Lyons A-Lodge', '2 mi', '$'),
-  createData('WeeCasa', '1 mi', '$'),
-];
-
-const DataTable = () => {
+const DataTable = ({ tableData }: DataTableProps) => {
+  const columns = tableData.columns;
+  const rows = tableData.rows;
   return (
     <TableContainer component={Paper}>
       <Table size="small" aria-label="caption table">
-        {/* <caption>A basic table example with a caption</caption> */}
         <TableHead>
           <TableRow>
-            <TableCell sx={{ fontWeight: 800 }}>Name</TableCell>
-            <TableCell sx={{ fontWeight: 800 }} align="right">Distance from Venue</TableCell>
-            <TableCell sx={{ fontWeight: 800 }} align="right">Price</TableCell>
+            {columns.map((column, idx) => (
+              <TableCell sx={{ fontWeight: 800 }} align="center" key={idx}>
+                {column}
+              </TableCell>
+            ))}
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
+          {rows.map((row, idx) => (
+            <TableRow key={idx}>
+              {row.map((data, idx) => (
+                <TableCell align="center" key={idx}>
+                  {data}
+                </TableCell>
+              ))}
             </TableRow>
           ))}
         </TableBody>

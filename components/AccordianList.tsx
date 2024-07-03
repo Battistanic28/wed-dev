@@ -1,18 +1,25 @@
 import * as React from 'react';
 import Accordion from '@mui/material/Accordion';
-import { Box } from '@mui/material';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import DataTable from './DataTable';
+import tableData from '../config/tableData.json';
+import InfoCard from './InfoCard';
 
 interface AccordianListProps {
   items: {
+    id: string,
     title: string,
     description: string,
+    hasTableData: boolean,
+    children?: { title: string, content: string }[],
   }[];
 }
 
+/**
+ * AccordianList has two display options, table data or children
+ */
 export default function AccordianList({ items }: AccordianListProps) {
   return (
     <div>
@@ -38,7 +45,22 @@ export default function AccordianList({ items }: AccordianListProps) {
           />
           <Box /> */}
           <AccordionDetails>
-            <DataTable />
+            {item.hasTableData ? (
+              <DataTable
+                tableData={tableData[item.id as keyof typeof tableData]}
+              />
+            ) : (
+              <>
+                {item.children &&
+                  item.children.map((child, idx) => (
+                    <InfoCard
+                      key={idx}
+                      title={child.title}
+                      description={child.content}
+                    />
+                  ))}
+              </>
+            )}
           </AccordionDetails>
         </Accordion>
       ))}
