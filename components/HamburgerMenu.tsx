@@ -4,11 +4,9 @@ import IconButton from '@mui/material/IconButton';
 import NavLink from './NavLink';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import config from '../config/config.json';
 
-const pages = ['Products', 'Pricing', 'Blog'];
 interface HamburgerMenuProps {
   navLinks: string[];
 }
@@ -27,14 +25,7 @@ function HanburgerMenu({ navLinks }: HamburgerMenuProps) {
   return (
     <>
       <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="menu-appbar"
-          aria-haspopup="true"
-          onClick={handleOpenNavMenu}
-          color="inherit"
-        >
+        <IconButton size="large" onClick={handleOpenNavMenu} color="inherit">
           <MenuIcon />
         </IconButton>
         <Menu
@@ -69,17 +60,6 @@ function HanburgerMenu({ navLinks }: HamburgerMenuProps) {
             );
           })}
         </Menu>
-      </Box>
-      <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-        {pages.map((page) => (
-          <Button
-            key={page}
-            onClick={handleCloseNavMenu}
-            sx={{ my: 2, color: 'white', display: 'block' }}
-          >
-            {page}
-          </Button>
-        ))}
       </Box>
     </>
   );
