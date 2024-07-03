@@ -9,8 +9,11 @@ import MenuItem from '@mui/material/MenuItem';
 import config from '../config/config.json';
 
 const pages = ['Products', 'Pricing', 'Blog'];
+interface HamburgerMenuProps {
+  navLinks: string[];
+}
 
-function HanburgerMenu({ navLinks }) {
+function HanburgerMenu({ navLinks }: HamburgerMenuProps) {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
