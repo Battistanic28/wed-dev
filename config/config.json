@@ -26,8 +26,10 @@
     "description": "",
     "categories": [
       {
+        "id": "getting-here",
         "title": "Getting Here 🛸",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+        "hasTableData": false,
         "children": [
           {
             "title": "Find flights",
@@ -40,12 +42,16 @@
         ]
       },
       {
+        "id": "where-to-stay",
         "title": "Where to Stay 🏡",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+        "hasTableData": true
       },
       {
+        "id": "things-to-do",
         "title": "Things to Do 🚴",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.",
+        "hasTableData": true
       }
     ]
   },

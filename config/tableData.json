@@ -1,0 +1,19 @@
+{
+    "where-to-stay": {
+        "columns": ["Name", "Distance from Venue", "Price"],
+        "rows": [
+            ["Hotel Boulderado", "12 mi", "$$$$"],
+            ["WeeCase Tiny Houses", "1 mi", "$$"],
+            ["Lyons A-Lodge", "2 mi", "$"],
+            ["St. Julien Hotel", "14 mi", "$$$$$"]
+        ]
+    },
+    "things-to-do": {
+        "columns": ["Activity", "Distance from Venue"],
+        "rows": [
+            ["P.C Fister's Bar & Grille", "0 mi"],
+            ["Rocky Mountain National Park", "25 mi"]
+
+        ]
+    }
+}
