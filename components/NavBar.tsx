@@ -1,4 +1,4 @@
-import { Toolbar, Typography, Box, useMediaQuery } from '@mui/material';
+import { Toolbar, Box, useMediaQuery, Link } from '@mui/material';
 import { NavContent, NavIcon, NavLinks } from './styles';
 import NavLink from './NavLink';
 import config from '../config/config.json';
@@ -11,22 +11,24 @@ export default function NavBar() {
 
   return (
     <Toolbar sx={NavContent} variant="dense">
-      <Typography sx={NavIcon} variant="h2">
+      <Link sx={NavIcon} href="/">
         N + K
-      </Typography>
+      </Link>
       {isMobile ? (
         <HanburgerMenu navLinks={configKeys} />
       ) : (
         <Box sx={NavLinks}>
           {configKeys.map((key) => {
-            const configItem = config[key as keyof typeof config];
-            return (
-              <NavLink
-                key={key}
-                title={configItem.title}
-                href={configItem.href}
-              />
-            );
+            if (!key.startsWith('_')) {
+              const configItem = config[key as keyof typeof config];
+              return (
+                <NavLink
+                  key={key}
+                  title={configItem.title}
+                  href={configItem.href}
+                />
+              );
+            }
           })}
         </Box>
       )}

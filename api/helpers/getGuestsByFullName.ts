@@ -1,8 +1,7 @@
 const getGuestsByFullName = async (fullName: string) => {
   try {
     const res = await fetch(
-      '/api/guests?' +
-        new URLSearchParams({ full_name: fullName.toUpperCase() }),
+      '/api/guests?' + new URLSearchParams({ full_name: fullName }),
       {
         method: 'GET',
       },
