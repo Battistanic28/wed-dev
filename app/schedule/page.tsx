@@ -1,9 +1,11 @@
 import Page from '@/components/Page';
 import InfoCard from '@/components/InfoCard';
+import config from '../../config/config.json';
 
 export default function SchedulePage() {
+  const { title, description } = config.SCHEDULE;
   return (
-    <Page title="Schedule">
+    <Page title={title} description={description}>
       <InfoCard
         title="Wednesday - June 25th 2025"
         description="Welcome party 5pm"

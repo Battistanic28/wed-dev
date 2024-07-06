@@ -8,9 +8,9 @@ import {
   PageBackground,
   PageBody,
   PageContent,
-  BackgroundImage,
+  // BackgroundImage,
 } from './styles';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 interface PageProps {
   children?: ReactNode;
@@ -18,7 +18,7 @@ interface PageProps {
   description?: string;
 }
 
-const Page: React.FC<PageProps> = ({ children }) => {
+const Page: React.FC<PageProps> = ({ children, title, description }) => {
   const [isPassowordErrored, setIsPasswordErrored] = useState<boolean>(false);
   const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
   const [isMounted, setIsMounted] = useState<boolean>(false);
@@ -37,6 +37,8 @@ const Page: React.FC<PageProps> = ({ children }) => {
             <>
               <NavBar />
               <Box sx={PageContent}>
+                {title && <Typography>{title}</Typography>}
+                {description && <Typography>{description}</Typography>}
                 <Box>{children}</Box>
               </Box>
             </>
@@ -52,14 +54,14 @@ const Page: React.FC<PageProps> = ({ children }) => {
             </>
           )}
         </Box>
-        <Box sx={BackgroundImage}>
+        {/* <Box sx={BackgroundImage}>
           <Image
             fill
             src="/poppies3.jpg"
             alt="Image alt"
             style={{ objectFit: 'cover' }}
           />
-        </Box>
+        </Box> */}
       </Box>
     )
   );

@@ -4,7 +4,7 @@ import ImageTile from '@/components/ImageTile';
 import { Box, Button } from '@mui/material';
 
 export default function ResourcePage() {
-  const { heading, description } = config.HOME;
+  const { heading, description } = config._HOME;
   return (
     <Page title={heading} description={description}>
       <ImageTile
