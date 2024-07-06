@@ -1,53 +1,65 @@
-import fetchMock from 'fetch-mock';
 import getGuestsByFullName from './getGuestsByFullName';
+
+global.fetch = jest.fn();
 
 describe('getGuestsByFullName', () => {
   afterEach(() => {
-    fetchMock.restore();
+    jest.clearAllMocks();
   });
 
-  it('should return guest rows when the request is successful', async () => {
-    const mockRows = [
-      {
-        full_name: 'Jane Doe',
-        group_id: 1,
-        response: 'yes',
-      },
-      {
-        full_name: 'John Doe',
-        group_id: 1,
-        response: 'Yes',
-      },
-    ];
-    const mockResponseData = {
+  it('should return guests when the API call is successful', async () => {
+    const mockResponse = {
       result: {
-        rows: mockRows,
+        rows: [{ id: 1, full_name: 'John Doe' }],
       },
     };
-
-    const fullName = 'John Doe';
-    const encodedFullName = encodeURIComponent(fullName);
-
-    fetchMock.get(`/api/guests?full_name=${encodedFullName}`, {
-      status: 200,
-      body: mockResponseData,
+    (fetch as jest.Mock).mockResolvedValue({
+      ok: true,
+      json: jest.fn().mockResolvedValue(mockResponse),
     });
 
-    const rows = await getGuestsByFullName(fullName);
+    const fullName = 'John Doe';
+    const guests = await getGuestsByFullName(fullName);
 
-    expect(rows).toEqual(mockRows);
+    expect(fetch).toHaveBeenCalledWith(
+      '/api/guests?' + new URLSearchParams({ full_name: fullName }),
+      {
+        method: 'GET',
+      },
+    );
+    expect(guests).toEqual(mockResponse.result.rows);
   });
 
-  it('should return an empty array when the request fails with a non-200 status', async () => {
-    const fullName = 'Joe Null';
-    const encodedFullName = encodeURIComponent(fullName);
-
-    fetchMock.get(`/api/guests?full_name=${encodedFullName}`, {
+  it('should throw an error when the API call is not successful', async () => {
+    (fetch as jest.Mock).mockResolvedValue({
+      ok: false,
       status: 500,
     });
 
-    const rows = await getGuestsByFullName(fullName);
+    const fullName = 'John Doe';
+    const guests = await getGuestsByFullName(fullName);
 
-    expect(rows).toEqual([]);
+    expect(fetch).toHaveBeenCalledWith(
+      '/api/guests?' + new URLSearchParams({ full_name: fullName }),
+      {
+        method: 'GET',
+      },
+    );
+    expect(guests).toEqual([]);
+  });
+
+  it('should return an empty array when an exception occurs', async () => {
+    (fetch as jest.Mock).mockRejectedValue(new Error('Network error'));
+
+    const fullName = 'John Doe';
+    const guests = await getGuestsByFullName(fullName);
+
+    expect(fetch).toHaveBeenCalledWith(
+      '/api/guests?' + new URLSearchParams({ full_name: fullName }),
+      {
+        method: 'GET',
+      },
+    );
+    expect(guests).toEqual([]);
   });
 });
