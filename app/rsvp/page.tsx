@@ -11,7 +11,6 @@ import getGuestsByFullName from '@/api/helpers/getGuestsByFullName';
 import postGuestResponse, {
   ResponseData,
 } from '@/api/helpers/postGuestResponse';
-import GroupSelectList from '@/components/GroupSelectList';
 import config from '../../config/config.json';
 
 export default function RsvpPage() {
@@ -19,7 +18,6 @@ export default function RsvpPage() {
   const [fullName, setFullName] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [responses, setResponses] = useState<ResponseData>([]);
-  const [group, setGroup] = useState([]);
 
   const handleLastNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFullName(event.target.value);
@@ -53,9 +51,12 @@ export default function RsvpPage() {
           />
           <Button onClick={onClick}>Search</Button>
         </Box>
-        <GroupSelectList results={searchResults} setGroup={setGroup} />
-        <ResponseForm selectedGroup={group} setResponses={setResponses} />
+        <ResponseForm
+          selectedGroup={searchResults}
+          setResponses={setResponses}
+        />
       </Box>
+      {/* TODO: convert to form and use onSubmit */}
       <Button type="submit" onClick={onSubmit}>
         Submit
       </Button>
