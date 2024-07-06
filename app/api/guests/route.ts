@@ -5,6 +5,7 @@ import { NextResponse, NextRequest } from 'next/server';
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const fullName = searchParams.get('full_name')?.toUpperCase();
+
   try {
     const result = await sql`
               SELECT *
