@@ -36,7 +36,7 @@ const PageBody: SxProps = {
 
 const PageContent: SxProps = {
   '& > *': {
-    marginBottom: 2,
+    marginBottom: 3,
   },
 };
 

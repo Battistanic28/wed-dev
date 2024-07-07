@@ -24,7 +24,7 @@ const Page: React.FC<PageProps> = ({ children, title, description }) => {
         <>
           <NavBar />
           <Box sx={PageContent}>
-            {title && <Typography>{title}</Typography>}
+            {title && <Typography variant="h2">{title}</Typography>}
             {description && <Typography>{description}</Typography>}
             <Box>{children}</Box>
           </Box>
