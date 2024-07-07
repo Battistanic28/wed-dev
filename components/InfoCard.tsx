@@ -6,9 +6,14 @@ import Typography from '@mui/material/Typography';
 interface InfoCardProps {
   title: string;
   description: string;
+  content?: string;
 }
 
-export default function InfoCard({ title, description }: InfoCardProps) {
+export default function InfoCard({
+  title,
+  description,
+  content,
+}: InfoCardProps) {
   return (
     <Card sx={{ margin: 1, backgroundColor: '#FC9007' }}>
       <CardContent>
@@ -16,6 +21,7 @@ export default function InfoCard({ title, description }: InfoCardProps) {
           {title}
         </Typography>
         <Typography variant="body2">{description}</Typography>
+        <Typography variant="body2">{content}</Typography>
       </CardContent>
     </Card>
   );

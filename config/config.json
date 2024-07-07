@@ -18,7 +18,32 @@
     "title": "Schedule",
     "href": "/schedule",
     "description": "We will have a mix of activities planned before and after wedding day. Please feel free to join for as much or as little as you can!",
-    "events": []
+    "events": [
+      {
+        "day": "Wed",
+        "date": "25",
+        "month": "June",
+        "title": "Welcome Party",
+        "description": "Time: 5pm",
+        "content": "Attire: Casual"
+      },
+      {
+        "day": "Thurs",
+        "date": "26",
+        "month": "June",
+        "title": "Ceremony",
+        "description": "Time: 5pm",
+        "content": "Attire: Formal"
+      },
+      {
+        "day": "Fri",
+        "date": "27",
+        "month": "June",
+        "title": "Brunch",
+        "description": "Time: 10am",
+        "content": "Attire: Casual"
+      }
+    ]
   },
   "RESOURCES": {
     "title": "Resources",

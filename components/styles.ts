@@ -35,7 +35,9 @@ const PageBody: SxProps = {
 };
 
 const PageContent: SxProps = {
-  // Add any other styles you need for PageContent
+  '& > *': {
+    marginBottom: 3,
+  },
 };
 
 // ImageTile
@@ -53,11 +55,18 @@ const NavContent: SxProps = {
   display: 'flex',
   justifyContent: 'space-between',
   maxWidth: '100%',
+  marginBottom: 2,
 };
 
 const NavLinks: SxProps = {
   display: 'flex',
   gap: 2,
+};
+
+const NavLink: SxProps = {
+  '&:hover': {
+    textDecoration: 'underline',
+  },
 };
 
 export {
@@ -67,5 +76,6 @@ export {
   PageContent,
   NavContent,
   NavLinks,
+  NavLink,
   ImageOverlayText,
 };
