@@ -1,8 +1,9 @@
-import { Toolbar, Box, useMediaQuery, Link } from '@mui/material';
-import { NavContent, NavIcon, NavLinks } from './styles';
+import { Toolbar, Box, useMediaQuery } from '@mui/material';
+import { NavContent, NavLinks } from './styles';
 import NavLink from './NavLink';
 import config from '../config/config.json';
 import HanburgerMenu from './HamburgerMenu';
+import Link from 'next/link';
 
 export default function NavBar() {
   const configKeys = Object.keys(config);
@@ -11,7 +12,8 @@ export default function NavBar() {
 
   return (
     <Toolbar sx={NavContent} variant="dense">
-      <Link sx={NavIcon} href="/">
+      {/* TODO: determine way to style with sx prop instead*/}
+      <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
         N + K
       </Link>
       {isMobile ? (

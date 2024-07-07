@@ -34,10 +34,10 @@ export default function ResponseForm({
           <ListItem key={entry.full_name}>
             <Box>
               {entry.full_name}
-              <Button onClick={() => registerEntry(entry.full_name, 'Yes')}>
+              <Button onClick={() => registerEntry(entry.full_name, 'yes')}>
                 Yes
               </Button>
-              <Button onClick={() => registerEntry(entry.full_name, 'No')}>
+              <Button onClick={() => registerEntry(entry.full_name, 'no')}>
                 No
               </Button>
             </Box>
