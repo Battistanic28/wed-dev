@@ -56,6 +56,8 @@ const NavContent: SxProps = {
   justifyContent: 'space-between',
   maxWidth: '100%',
   marginBottom: 2,
+  borderBottom: 2,
+  borderBottomStyle: 'dotted',
 };
 
 const NavLinks: SxProps = {
