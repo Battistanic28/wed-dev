@@ -55,10 +55,6 @@ const NavContent: SxProps = {
   maxWidth: '100%',
 };
 
-const NavIcon: SxProps = {
-  justifyContent: 'left',
-};
-
 const NavLinks: SxProps = {
   display: 'flex',
   gap: 2,
@@ -70,7 +66,6 @@ export {
   PageBody,
   PageContent,
   NavContent,
-  NavIcon,
   NavLinks,
   ImageOverlayText,
 };
