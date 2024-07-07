@@ -63,6 +63,12 @@ const NavLinks: SxProps = {
   gap: 2,
 };
 
+const NavLink: SxProps = {
+  '&:hover': {
+    textDecoration: 'underline',
+  },
+};
+
 export {
   BackgroundImage,
   PageBackground,
@@ -70,5 +76,6 @@ export {
   PageContent,
   NavContent,
   NavLinks,
+  NavLink,
   ImageOverlayText,
 };
