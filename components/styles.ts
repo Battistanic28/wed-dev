@@ -35,7 +35,9 @@ const PageBody: SxProps = {
 };
 
 const PageContent: SxProps = {
-  // Add any other styles you need for PageContent
+  '& > *': {
+    marginBottom: 2,
+  },
 };
 
 // ImageTile
@@ -53,6 +55,7 @@ const NavContent: SxProps = {
   display: 'flex',
   justifyContent: 'space-between',
   maxWidth: '100%',
+  marginBottom: 2,
 };
 
 const NavLinks: SxProps = {

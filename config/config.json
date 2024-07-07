@@ -23,25 +23,25 @@
         "day": "Wed",
         "date": "25",
         "month": "June",
-        "title": "Wednesday - June 25th 2025",
-        "description": "Welcome party 5pm",
-        "content": "Atire: Casual"
+        "title": "Welcome Party",
+        "description": "Time: 5pm",
+        "content": "Attire: Casual"
       },
       {
         "day": "Thurs",
         "date": "26",
         "month": "June",
-        "title": "Thursday - June 26th 2025",
-        "description": "Ceremony 5-6pm",
-        "content": "Atire: Formal"
+        "title": "Ceremony",
+        "description": "Time: 5pm",
+        "content": "Attire: Formal"
       },
       {
         "day": "Fri",
         "date": "27",
         "month": "June",
-        "title": "Friday - June 27th 2025",
-        "description": "Brunch 10am",
-        "content": "Atire: Casual"
+        "title": "Brunch",
+        "description": "Time: 10am",
+        "content": "Attire: Casual"
       }
     ]
   },

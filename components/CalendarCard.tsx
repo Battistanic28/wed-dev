@@ -3,6 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import Link from 'next/link';
 
 interface InfoCardProps {
   title: string;
@@ -31,11 +32,12 @@ export default function InfoCard({
             <Typography variant="body2">{month}</Typography>
           </Box>
           <Box sx={{ flexGrow: 1, textAlign: 'right' }}>
-            <Typography variant="body2" component="div">
+            <Typography variant="h3" component="h3">
               {title}
             </Typography>
             <Typography variant="body2">{description}</Typography>
             <Typography variant="body2">{content}</Typography>
+            <Link href="TODO">Add to Calendar</Link>
           </Box>
         </Box>
       </CardContent>
