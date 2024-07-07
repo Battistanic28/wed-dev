@@ -1,17 +1,24 @@
 import Page from '@/components/Page';
-import InfoCard from '@/components/InfoCard';
+import CalendarCard from '@/components/CalendarCard';
 import config from '../../config/config.json';
 
 export default function SchedulePage() {
-  const { title, description } = config.SCHEDULE;
+  const { title, description, events } = config.SCHEDULE;
   return (
     <Page title={title} description={description}>
-      <InfoCard
-        title="Wednesday - June 25th 2025"
-        description="Welcome party 5pm"
-      />
-      <InfoCard title="Thursday - June 26th 2025" description="Ceremony 5pm" />
-      <InfoCard title="Friday - June 27th 2025" description="Brunch 10am" />
+      {events.map((event, idx) => {
+        return (
+          <CalendarCard
+            key={idx}
+            title={event.title}
+            description={event.description}
+            content={event.content}
+            day={event.day}
+            date={event.date}
+            month={event.month}
+          />
+        );
+      })}
     </Page>
   );
 }
