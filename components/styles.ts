@@ -2,12 +2,12 @@ import { SxProps } from '@mui/material';
 
 // Page
 const BackgroundImage: SxProps = {
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  height: '100%',
-  width: '100%',
-  zIndex: -1,
+  // position: 'absolute',
+  // top: 0,
+  // left: 0,
+  // height: '100%',
+  // width: '100%',
+  // zIndex: -1,
 };
 
 const PageBackground: SxProps = {
@@ -15,23 +15,23 @@ const PageBackground: SxProps = {
   width: '100vw',
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center',
-  // background: 'linear-gradient(135deg, #FF9602 0%, #ED1601 100%)',
+  // alignItems: 'center',
   margin: 0,
   padding: 0,
-  position: 'relative',
+  // position: 'relative',
+  backgroundColor: '#F8CECA',
 };
 
 const PageBody: SxProps = {
-  height: '80vh',
-  width: '65%',
-  textAlign: 'center',
-  backgroundColor: '#F8F5DF',
-  borderRadius: 2,
-  boxShadow: 3,
-  paddingLeft: 3,
-  paddingRight: 3,
-  maxWidth: '700px',
+  // height: '80vh',
+  // width: '65%',
+  // textAlign: 'center',
+  // backgroundColor: '#F8F5DF',
+  // borderRadius: 2,
+  // boxShadow: 3,
+  // paddingLeft: 3,
+  // paddingRight: 3,
+  // maxWidth: '700px',
 };
 
 const PageContent: SxProps = {
@@ -40,14 +40,12 @@ const PageContent: SxProps = {
   },
 };
 
-// ImageTile
-const ImageOverlayText = {
-  position: 'absolute',
-  top: '20%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  color: 'white',
-  textAlign: 'center',
+// Welcome page styles
+const WelcomeHeroStyles: SxProps = {
+  fontFamily: 'Sentir',
+  fontSize: '80px',
+  maxWidth: '500px',
+  color: '#FE9833',
 };
 
 // Nav
@@ -55,9 +53,6 @@ const NavContent: SxProps = {
   display: 'flex',
   justifyContent: 'space-between',
   maxWidth: '100%',
-  marginBottom: 2,
-  borderBottom: 2,
-  borderBottomStyle: 'dotted',
 };
 
 const NavLinks: SxProps = {
@@ -71,13 +66,24 @@ const NavLink: SxProps = {
   },
 };
 
+const TransitionElement: SxProps = {
+  width: '100vw',
+  height: '100vh',
+  backgroundColor: 'black',
+  'z-index': '100',
+  position: 'fixed',
+  top: 0,
+  left: 0,
+};
+
 export {
   BackgroundImage,
   PageBackground,
+  WelcomeHeroStyles,
   PageBody,
   PageContent,
   NavContent,
   NavLinks,
   NavLink,
-  ImageOverlayText,
+  TransitionElement,
 };

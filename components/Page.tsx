@@ -30,14 +30,14 @@ const Page: React.FC<PageProps> = ({ children, title, description }) => {
           </Box>
         </>
       </Box>
-      <Box sx={BackgroundImage}>
+      {/* <Box sx={BackgroundImage}>
         <Image
           fill
           src="/poppies3.jpg"
           alt="Image alt"
           style={{ objectFit: 'cover' }}
         />
-      </Box>
+      </Box> */}
     </Box>
   );
 };
