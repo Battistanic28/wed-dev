@@ -24,6 +24,7 @@ const ImageTile = ({ src, alt, title, subtitle }: ImageTileProps) => {
           borderRadius: '4px',
           boxShadow: '10px',
         }}
+        priority
       />
       <Box sx={ImageOverlayText}>
         {title && <Typography variant="h2">{title}</Typography>}
