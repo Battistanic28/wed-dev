@@ -34,7 +34,9 @@ theme.typography.h3 = {};
 
 theme.typography.body1 = {
   fontSize: '.75rem',
-  fontWeight: 'normal',
+  fontWeight: '400',
+  color: '#654A4E',
+  fontFamily: 'SpaceMono',
   '@media (min-width:600px)': {
     fontSize: '.75rem',
   },

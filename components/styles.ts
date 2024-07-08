@@ -32,6 +32,7 @@ const NavLinks: SxProps = {
 const NavLink: SxProps = {
   '&:hover': {
     textDecoration: 'underline',
+    textDecorationStyle: 'dotted',
   },
 };
 

@@ -2,3 +2,8 @@
     font-family: 'Sentir';
     src: url('../public/fonts/SentirDuSoleil.otf');
 }
+
+@font-face {
+    font-family: 'SpaceMono';
+    src: url('../public/fonts//SpaceMono-Regular.ttf');
+}
