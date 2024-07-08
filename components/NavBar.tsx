@@ -16,15 +16,15 @@ export default function NavBar() {
       <Link
         href="/"
         style={{
-          fontFamily: 'Sentir',
+          fontFamily: 'SpaceMono',
           fontSize: '1.5rem',
           textDecoration: 'none',
-          color: '#0E6655',
+          color: '#654A4E',
           position: 'fixed',
           left: '1rem',
         }}
       >
-        N + K
+        N+K
       </Link>
       {isMobile ? (
         <HanburgerMenu navLinks={configKeys} />

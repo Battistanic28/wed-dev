@@ -9,12 +9,19 @@ const PageBody: SxProps = {
 
 // Welcome page styles
 const WelcomeHeroStyles: SxProps = {
-  margin: 'auto',
-  textAlign: 'center',
+  lineHeight: '4.5rem',
+  textShadow: '3px 3px #FEEDE5',
+  margin: '4rem auto',
   fontFamily: 'Sentir',
   fontSize: '80px',
   maxWidth: '500px',
+  textAlign: 'center',
   color: '#FE9833',
+};
+
+const WelcomeInfoStyles: SxProps = {
+  margin: '4rem auto',
+  textAlign: 'center',
 };
 
 // Nav
@@ -47,6 +54,7 @@ const TransitionElement: SxProps = {
 
 export {
   WelcomeHeroStyles,
+  WelcomeInfoStyles,
   PageBody,
   NavContent,
   NavLinks,
