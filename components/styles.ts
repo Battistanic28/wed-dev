@@ -21,7 +21,6 @@ const WelcomeHeroStyles: SxProps = {
 const NavContent: SxProps = {
   display: 'flex',
   justifyContent: 'center',
-  paddingBottom: 2,
 };
 
 const NavLinks: SxProps = {
