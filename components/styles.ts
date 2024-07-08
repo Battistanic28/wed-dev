@@ -9,6 +9,8 @@ const PageBody: SxProps = {
 
 // Welcome page styles
 const WelcomeHeroStyles: SxProps = {
+  margin: 'auto',
+  textAlign: 'center',
   fontFamily: 'Sentir',
   fontSize: '80px',
   maxWidth: '500px',
@@ -19,6 +21,7 @@ const WelcomeHeroStyles: SxProps = {
 const NavContent: SxProps = {
   display: 'flex',
   justifyContent: 'center',
+  paddingBottom: 2,
 };
 
 const NavLinks: SxProps = {

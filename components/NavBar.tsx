@@ -16,8 +16,10 @@ export default function NavBar() {
       <Link
         href="/"
         style={{
+          fontFamily: 'Sentir',
+          fontSize: '1.5rem',
           textDecoration: 'none',
-          color: 'inherit',
+          color: '#0E6655',
           position: 'fixed',
           left: '1rem',
         }}
