@@ -1,43 +1,10 @@
 import { SxProps } from '@mui/material';
 
 // Page
-const BackgroundImage: SxProps = {
-  // position: 'absolute',
-  // top: 0,
-  // left: 0,
-  // height: '100%',
-  // width: '100%',
-  // zIndex: -1,
-};
-
-const PageBackground: SxProps = {
-  height: '100vh',
-  width: '100vw',
-  display: 'flex',
-  justifyContent: 'center',
-  // alignItems: 'center',
-  margin: 0,
-  padding: 0,
-  // position: 'relative',
-  backgroundColor: '#F8CECA',
-};
-
 const PageBody: SxProps = {
-  // height: '80vh',
-  // width: '65%',
-  // textAlign: 'center',
-  // backgroundColor: '#F8F5DF',
-  // borderRadius: 2,
-  // boxShadow: 3,
-  // paddingLeft: 3,
-  // paddingRight: 3,
-  // maxWidth: '700px',
-};
-
-const PageContent: SxProps = {
-  '& > *': {
-    marginBottom: 3,
-  },
+  width: '100%',
+  height: '100vh',
+  backgroundColor: '#F8CECA',
 };
 
 // Welcome page styles
@@ -51,8 +18,7 @@ const WelcomeHeroStyles: SxProps = {
 // Nav
 const NavContent: SxProps = {
   display: 'flex',
-  justifyContent: 'space-between',
-  maxWidth: '100%',
+  justifyContent: 'center',
 };
 
 const NavLinks: SxProps = {
@@ -77,11 +43,8 @@ const TransitionElement: SxProps = {
 };
 
 export {
-  BackgroundImage,
-  PageBackground,
   WelcomeHeroStyles,
   PageBody,
-  PageContent,
   NavContent,
   NavLinks,
   NavLink,

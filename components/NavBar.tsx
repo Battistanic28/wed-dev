@@ -13,7 +13,15 @@ export default function NavBar() {
   return (
     <Toolbar sx={NavContent} variant="dense">
       {/* TODO: determine way to style with sx prop instead*/}
-      <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+      <Link
+        href="/"
+        style={{
+          textDecoration: 'none',
+          color: 'inherit',
+          position: 'fixed',
+          left: '1rem',
+        }}
+      >
         N + K
       </Link>
       {isMobile ? (
