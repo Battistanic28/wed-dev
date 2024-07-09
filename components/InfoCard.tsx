@@ -15,7 +15,7 @@ export default function InfoCard({
   content,
 }: InfoCardProps) {
   return (
-    <Card sx={{ margin: 1, backgroundColor: '#FC9007' }}>
+    <Card sx={{ margin: 1 }}>
       <CardContent>
         <Typography variant="body2" component="div">
           {title}
