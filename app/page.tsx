@@ -7,7 +7,7 @@ export default function ResourcePage() {
     <Page>
       {/* TODO: move to config*/}
       <Box sx={WelcomeHeroStyles} id="heroText">
-        We're gEtting maRrieD!
+        We&apos;re gEtting maRrieD!
       </Box>
       <Box sx={WelcomeInfoStyles}>
         <Typography>Nick Battista & Catherine Plevak</Typography>
