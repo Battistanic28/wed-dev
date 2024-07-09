@@ -7,3 +7,13 @@
     font-family: 'SpaceMono';
     src: url('../public/fonts//SpaceMono-Regular.ttf');
 }
+
+@font-face {
+    font-family: 'Meriah';
+    src: url('../public/fonts/Meriah-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Meriah-outline';
+    src: url('../public/fonts/Meriah-Outline.otf');
+}

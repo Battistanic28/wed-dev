@@ -15,7 +15,7 @@ const Page: React.FC<PageProps> = ({ children, title, description }) => {
   return (
     <Box sx={PageBody}>
       <NavBar />
-      <Divider sx={{ maxWidth: '500px', margin: 'auto' }} />
+      {/* <Divider sx={{ maxWidth: '500px', margin: 'auto' }} /> */}
       <Box sx={{ marginTop: '2rem' }}>
         {title && <Typography variant="h2">{title}</Typography>}
         {description && <Typography>{description}</Typography>}

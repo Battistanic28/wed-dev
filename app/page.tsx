@@ -6,7 +6,9 @@ export default function ResourcePage() {
   return (
     <Page>
       {/* TODO: move to config*/}
-      <Box sx={WelcomeHeroStyles}>We're getting married!</Box>
+      <Box sx={WelcomeHeroStyles} id="heroText">
+        We're gEtting maRrieD!
+      </Box>
       <Box sx={WelcomeInfoStyles}>
         <Typography>Nick Battista & Catherine Plevak</Typography>
         <Typography>The Farmette ∙ Lyons, CO </Typography>

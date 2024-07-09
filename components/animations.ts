@@ -13,6 +13,8 @@ import { EaselPlugin } from 'gsap/EaselPlugin';
 import { PixiPlugin } from 'gsap/PixiPlugin';
 import { TextPlugin } from 'gsap/TextPlugin';
 
+import { SplitText } from 'gsap-trial/SplitText';
+
 gsap.registerPlugin(
   Flip,
   ScrollTrigger,
@@ -27,7 +29,37 @@ gsap.registerPlugin(
   ExpoScaleEase,
   SlowMo,
   CustomEase,
+  SplitText,
 );
+
+export const animateHeroText = () => {
+  const split = new SplitText('#heroText', { type: 'chars' });
+
+  gsap.from(split.chars, {
+    duration: 0.2,
+    // y: 100,
+    stagger: {
+      from: 'random',
+      each: 0.05,
+      ease: 'none',
+    },
+    autoAlpha: 0,
+  });
+
+  gsap.from(split.chars[4], {
+    duration: 0.5,
+    rotate: 1,
+    repeat: -1,
+    yoyo: true,
+  });
+
+  gsap.from(split.chars[split.chars.length - 1], {
+    duration: 0.5,
+    y: 1,
+    repeat: -1,
+    yoyo: true,
+  });
+};
 
 export const animatePageIn = () => {
   const transitionElement = document.getElementById('transition-element');
