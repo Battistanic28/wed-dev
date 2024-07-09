@@ -11,14 +11,16 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 Active pages for the applications include,
-- `/home`
+- `/`
 - `/rsvp`
 - `/story`
 - `/resources`
 - `/schedule`
+- `/registry`
+- `/contact`
 
 Data is fetched from the Guests api at `{base_url}api/guests`
-- `GET` - retrieves guestlist entries filtered by `last_name` query parameter.
+- `GET` - retrieves guestlist entries filtered by `full_name` query parameter.
 - `POST` - updates guestlist entry response ('yes'/'no').
 
 ## Lint
