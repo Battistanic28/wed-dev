@@ -1,63 +1,33 @@
 import { SxProps } from '@mui/material';
 
 // Page
-const BackgroundImage: SxProps = {
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  height: '100%',
-  width: '100%',
-  zIndex: -1,
-};
-
-const PageBackground: SxProps = {
-  height: '100vh',
-  width: '100vw',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  // background: 'linear-gradient(135deg, #FF9602 0%, #ED1601 100%)',
-  margin: 0,
-  padding: 0,
-  position: 'relative',
-};
-
 const PageBody: SxProps = {
-  height: '80vh',
-  width: '65%',
+  width: '100%',
+  height: '100vh',
+  backgroundColor: '#C6C358',
+};
+
+// Welcome page styles
+const WelcomeHeroStyles: SxProps = {
+  lineHeight: '4.5rem',
+  // textShadow: '1px 1px #FEEDE5',
+  margin: '4rem auto',
+  fontFamily: 'Meriah',
+  fontSize: '100px',
+  maxWidth: '600px',
   textAlign: 'center',
-  backgroundColor: '#F8F5DF',
-  borderRadius: 2,
-  boxShadow: 3,
-  paddingLeft: 3,
-  paddingRight: 3,
-  maxWidth: '700px',
+  color: '#FEEDE5',
 };
 
-const PageContent: SxProps = {
-  '& > *': {
-    marginBottom: 3,
-  },
-};
-
-// ImageTile
-const ImageOverlayText = {
-  position: 'absolute',
-  top: '20%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  color: 'white',
+const WelcomeInfoStyles: SxProps = {
+  margin: '4rem auto',
   textAlign: 'center',
 };
 
 // Nav
 const NavContent: SxProps = {
   display: 'flex',
-  justifyContent: 'space-between',
-  maxWidth: '100%',
-  marginBottom: 2,
-  borderBottom: 2,
-  borderBottomStyle: 'dotted',
+  justifyContent: 'center',
 };
 
 const NavLinks: SxProps = {
@@ -68,16 +38,26 @@ const NavLinks: SxProps = {
 const NavLink: SxProps = {
   '&:hover': {
     textDecoration: 'underline',
+    textDecorationStyle: 'dotted',
   },
 };
 
+const TransitionElement: SxProps = {
+  // width: '100vw',
+  // height: '100vh',
+  // backgroundColor: 'black',
+  // 'z-index': '100',
+  // position: 'fixed',
+  // top: 0,
+  // left: 0,
+};
+
 export {
-  BackgroundImage,
-  PageBackground,
+  WelcomeHeroStyles,
+  WelcomeInfoStyles,
   PageBody,
-  PageContent,
   NavContent,
   NavLinks,
   NavLink,
-  ImageOverlayText,
+  TransitionElement,
 };

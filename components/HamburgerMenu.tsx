@@ -24,7 +24,8 @@ function HanburgerMenu({ navLinks }: HamburgerMenuProps) {
 
   return (
     <>
-      <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+      {/* TODO: move to imported sx prop */}
+      <Box sx={{ position: 'fixed', right: '1rem' }}>
         <IconButton size="large" onClick={handleOpenNavMenu} color="inherit">
           <MenuIcon />
         </IconButton>

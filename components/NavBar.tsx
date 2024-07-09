@@ -13,8 +13,18 @@ export default function NavBar() {
   return (
     <Toolbar sx={NavContent} variant="dense">
       {/* TODO: determine way to style with sx prop instead*/}
-      <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-        N + K
+      <Link
+        href="/"
+        style={{
+          fontFamily: 'SpaceMono',
+          fontSize: '1.5rem',
+          textDecoration: 'none',
+          color: '#654A4E',
+          position: 'fixed',
+          left: '1rem',
+        }}
+      >
+        N+K
       </Link>
       {isMobile ? (
         <HanburgerMenu navLinks={configKeys} />

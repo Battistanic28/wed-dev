@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { Box, Typography } from '@mui/material';
-import { ImageOverlayText } from './styles';
 
 interface ImageTileProps {
   src: string;
@@ -26,7 +25,7 @@ const ImageTile = ({ src, alt, title, subtitle }: ImageTileProps) => {
         }}
         priority
       />
-      <Box sx={ImageOverlayText}>
+      <Box>
         {title && <Typography variant="h2">{title}</Typography>}
         {subtitle && <Typography variant="h3">{subtitle}</Typography>}
       </Box>
