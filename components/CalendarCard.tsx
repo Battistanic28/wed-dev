@@ -23,7 +23,7 @@ export default function InfoCard({
   month,
 }: InfoCardProps) {
   return (
-    <Card sx={{ margin: 1, backgroundColor: '#FC9007' }}>
+    <Card sx={{ margin: 1 }}>
       <CardContent>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Box sx={{ marginRight: 2, textAlign: 'center' }}>
@@ -32,9 +32,7 @@ export default function InfoCard({
             <Typography variant="body2">{month}</Typography>
           </Box>
           <Box sx={{ flexGrow: 1, textAlign: 'right' }}>
-            <Typography variant="h3" component="h3">
-              {title}
-            </Typography>
+            <Typography variant="h3">{title}</Typography>
             <Typography variant="body2">{description}</Typography>
             <Typography variant="body2">{content}</Typography>
             <Link href="TODO">Add to Calendar</Link>

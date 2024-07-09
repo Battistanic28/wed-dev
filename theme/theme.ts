@@ -2,54 +2,65 @@
 
 import { createTheme } from '@mui/material/styles';
 
-export const theme = createTheme();
-
-// Palette
-// Add color palette
+// Breakpoints
+const breakpoints = {
+  values: {
+    xs: 0,
+    sm: 600,
+    md: 900,
+    lg: 1200,
+    xl: 1536,
+  },
+};
 
 // Typography
-theme.typography.h1 = {
-  fontSize: '2.5rem',
-  fontWeight: 'normal',
-  '@media (min-width:600px)': {
+const typography = {
+  h1: {
+    color: '#654A4E',
+    fontFamily: 'SpaceMono',
     fontSize: '2.5rem',
+    fontWeight: 'normal',
+    '@media (min-width:600px)': {
+      fontSize: '2.5rem',
+    },
+    [breakpoints.values.md]: {
+      fontSize: '2.5rem',
+    },
   },
-  [theme.breakpoints.up('md')]: {
-    fontSize: '2.5rem',
+  h2: {
+    color: '#654A4E',
+    fontFamily: 'SpaceMono',
+    fontSize: '2rem',
+    fontWeight: 'normal',
+    '@media (min-width:600px)': {
+      fontSize: '2rem',
+    },
+    [breakpoints.values.md]: {
+      fontSize: '1rem',
+    },
   },
-};
-
-theme.typography.h2 = {
-  fontSize: '1.5rem',
-  fontWeight: 'normal',
-  '@media (min-width:600px)': {
+  h3: {
+    color: '#654A4E',
     fontSize: '1.5rem',
+    fontFamily: 'SpaceMono',
   },
-  [theme.breakpoints.up('md')]: {
-    fontSize: '1rem',
-  },
-};
-
-theme.typography.h3 = {};
-
-theme.typography.body1 = {
-  fontSize: '.75rem',
-  fontWeight: '400',
-  color: '#654A4E',
-  fontFamily: 'SpaceMono',
-  '@media (min-width:600px)': {
+  body1: {
     fontSize: '.75rem',
-  },
-  [theme.breakpoints.up('md')]: {
-    fontSize: '.75rem',
+    fontWeight: '400',
+    color: '#654A4E',
+    fontFamily: 'SpaceMono',
+    '@media (min-width:600px)': {
+      fontSize: '.75rem',
+    },
+    [breakpoints.values.md]: {
+      fontSize: '.75rem',
+    },
   },
 };
 
-// Breakpoints
-theme.breakpoints.values = {
-  xs: 0,
-  sm: 600,
-  md: 900,
-  lg: 1200,
-  xl: 1536,
-};
+// Theme
+export const theme = createTheme({
+  breakpoints,
+  typography,
+  // Add color palette and other customizations here
+});

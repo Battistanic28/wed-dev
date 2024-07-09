@@ -10,7 +10,6 @@ const PageBody: SxProps = {
 // Welcome page styles
 const WelcomeHeroStyles: SxProps = {
   lineHeight: '4.5rem',
-  // textShadow: '1px 1px #FEEDE5',
   margin: '4rem auto',
   fontFamily: 'Meriah',
   fontSize: '100px',
@@ -35,10 +34,25 @@ const NavLinks: SxProps = {
   gap: 2,
 };
 
+const NavLogo: SxProps = {
+  fontFamily: 'SpaceMono',
+  fontSize: '1.5rem',
+  textDecoration: 'none',
+  color: '#654A4E',
+  position: 'fixed',
+  top: '.5rem',
+  left: '1rem',
+
+  '&:hover': {
+    textTransform: 'uppercase',
+  },
+};
+
 const NavLink: SxProps = {
   '&:hover': {
     textDecoration: 'underline',
     textDecorationStyle: 'dotted',
+    textUnderlineOffset: '.25rem',
   },
 };
 
@@ -59,5 +73,6 @@ export {
   NavContent,
   NavLinks,
   NavLink,
+  NavLogo,
   TransitionElement,
 };
