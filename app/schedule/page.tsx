@@ -16,6 +16,7 @@ export default function SchedulePage() {
             day={event.day}
             date={event.date}
             month={event.month}
+            href={event.href}
           />
         );
       })}
