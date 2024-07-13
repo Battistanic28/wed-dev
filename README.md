@@ -37,7 +37,18 @@ npm run test
 ```
 
 ## Deployment
+### Preview Deployment Steps:
+To deploy to the `Preview` environment,
+- Merge your feature branch to `main`.
+### Production Deployment Steps:
+To deploy to the `Production` environment,
+- Merge the current `main` branch to `prod`.
+- Tag latest version (`v0.0.0`).
+- Create release notes with full diff.
 
-This project is deployed to Vercel. Details for the project can be found here - https://vercel.com/nicks-projects-5de592b8/wed-dev
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Environments
+
+- Production: [nickandkitty.com](http://nickandkitty.com)
+- Preview: https://wed-dev.vercel.app
+- Local: http://localhost:3000
