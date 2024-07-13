@@ -1,9 +1,10 @@
 import { Toolbar, Box, useMediaQuery } from '@mui/material';
-import { NavContent, NavLinks } from './styles';
+import { NavContent, NavLinks, NavLogo } from './styles';
 import NavLink from './NavLink';
 import config from '../config/config.json';
 import HanburgerMenu from './HamburgerMenu';
-import Link from 'next/link';
+import NextLink from 'next/link';
+import { Link as MUILink } from '@mui/material';
 
 export default function NavBar() {
   const configKeys = Object.keys(config);
@@ -12,20 +13,11 @@ export default function NavBar() {
 
   return (
     <Toolbar sx={NavContent} variant="dense">
-      {/* TODO: determine way to style with sx prop instead*/}
-      <Link
-        href="/"
-        style={{
-          fontFamily: 'SpaceMono',
-          fontSize: '1.5rem',
-          textDecoration: 'none',
-          color: '#654A4E',
-          position: 'fixed',
-          left: '1rem',
-        }}
-      >
-        N+K
-      </Link>
+      <NextLink href="/" passHref>
+        <MUILink component="p" sx={NavLogo}>
+          n+k
+        </MUILink>
+      </NextLink>
       {isMobile ? (
         <HanburgerMenu navLinks={configKeys} />
       ) : (
