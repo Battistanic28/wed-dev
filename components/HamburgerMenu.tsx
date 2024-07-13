@@ -3,9 +3,9 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import NavLink from './NavLink';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import config from '../config/config.json';
+import { Typography } from '@mui/material';
 
 interface HamburgerMenuProps {
   navLinks: string[];
@@ -26,8 +26,8 @@ function HanburgerMenu({ navLinks }: HamburgerMenuProps) {
     <>
       {/* TODO: move to imported sx prop */}
       <Box sx={{ position: 'fixed', right: '1rem' }}>
-        <IconButton size="large" onClick={handleOpenNavMenu} color="inherit">
-          <MenuIcon />
+        <IconButton onClick={handleOpenNavMenu} color="inherit">
+          <Typography>Menu</Typography>
         </IconButton>
         <Menu
           id="menu-appbar"
@@ -43,9 +43,6 @@ function HanburgerMenu({ navLinks }: HamburgerMenuProps) {
           }}
           open={Boolean(anchorElNav)}
           onClose={handleCloseNavMenu}
-          sx={{
-            display: { xs: 'block', md: 'none' },
-          }}
         >
           {navLinks.map((key) => {
             const configItem = config[key as keyof typeof config];
