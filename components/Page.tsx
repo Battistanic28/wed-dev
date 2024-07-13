@@ -3,7 +3,7 @@
 import React, { ReactNode } from 'react';
 import { Box, Typography } from '@mui/material';
 import NavBar from './NavBar';
-import { PageBody } from './styles';
+import { PageBody, PageFooter } from './styles';
 
 interface PageProps {
   children?: ReactNode;
@@ -19,6 +19,9 @@ const Page: React.FC<PageProps> = ({ children, title, description }) => {
         {title && <Typography variant="h2">{title.toLowerCase()}</Typography>}
         {description && <Typography>{description}</Typography>}
         <Box>{children}</Box>
+      </Box>
+      <Box sx={PageFooter}>
+        <Typography>Made with ❤️ by Nick and Kitty</Typography>
       </Box>
     </Box>
   );

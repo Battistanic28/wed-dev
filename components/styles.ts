@@ -7,6 +7,13 @@ const PageBody: SxProps = {
   backgroundColor: '#C6C358',
 };
 
+const PageFooter: SxProps = {
+  textAlign: 'center',
+  position: 'fixed',
+  bottom: '2rem',
+  width: '100%',
+};
+
 // Welcome page styles
 const WelcomeHeroStyles: SxProps = {
   lineHeight: '4.5rem',
@@ -70,6 +77,7 @@ export {
   WelcomeHeroStyles,
   WelcomeInfoStyles,
   PageBody,
+  PageFooter,
   NavContent,
   NavLinks,
   NavLink,
