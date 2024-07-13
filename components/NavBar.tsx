@@ -14,7 +14,9 @@ export default function NavBar() {
   return (
     <Toolbar sx={NavContent} variant="dense">
       <NextLink href="/" passHref>
-        <MUILink sx={NavLogo}>n+k</MUILink>
+        <MUILink component="p" sx={NavLogo}>
+          n+k
+        </MUILink>
       </NextLink>
       {isMobile ? (
         <HanburgerMenu navLinks={configKeys} />
