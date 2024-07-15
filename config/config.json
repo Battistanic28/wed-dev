@@ -25,7 +25,8 @@
         "month": "June",
         "title": "Welcome Party",
         "description": "Time: 5pm",
-        "content": "Attire: Casual"
+        "content": "Attire: Casual",
+        "href": "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20250626T010000Z%2F20250626T030000Z&details=Come%20join%20us%20for%20food%20and%20drinks%20&location=2775%20Valmont%20Rd%2C%20Boulder%2C%20CO%2080304&text=Nick%20%2B%20Cat%20Welcome%20Party"
       },
       {
         "day": "Thurs",
@@ -33,7 +34,8 @@
         "month": "June",
         "title": "Ceremony",
         "description": "Time: 5pm",
-        "content": "Attire: Formal"
+        "content": "Attire: Formal",
+        "href": "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20250626T010000Z%2F20250626T030000Z&details=Come%20join%20us%20for%20food%20and%20drinks%20&location=2775%20Valmont%20Rd%2C%20Boulder%2C%20CO%2080304&text=Nick%20%2B%20Cat%20Welcome%20Party"
       },
       {
         "day": "Fri",
@@ -41,7 +43,8 @@
         "month": "June",
         "title": "Brunch",
         "description": "Time: 10am",
-        "content": "Attire: Casual"
+        "content": "Attire: Casual",
+        "href": "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20250626T010000Z%2F20250626T030000Z&details=Come%20join%20us%20for%20food%20and%20drinks%20&location=2775%20Valmont%20Rd%2C%20Boulder%2C%20CO%2080304&text=Nick%20%2B%20Cat%20Welcome%20Party"
       }
     ]
   },

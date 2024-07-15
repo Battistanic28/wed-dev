@@ -3,25 +3,26 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Link from 'next/link';
 
-interface InfoCardProps {
+interface CalendarCardProps {
   title: string;
   description: string;
   content?: string;
   day: string; // e.g., 'Fri'
   date: string; // e.g., '26'
   month: string; // e.g., 'June'
+  href: string;
 }
 
-export default function InfoCard({
+export default function CalendarCard({
   title,
   description,
   content,
   day,
   date,
   month,
-}: InfoCardProps) {
+  href,
+}: CalendarCardProps) {
   return (
     <Card sx={{ margin: 1 }}>
       <CardContent>
@@ -35,7 +36,11 @@ export default function InfoCard({
             <Typography variant="h3">{title}</Typography>
             <Typography variant="body2">{description}</Typography>
             <Typography variant="body2">{content}</Typography>
-            <Link href="TODO">Add to Calendar</Link>
+            {/* TODO: Update with cal links when details are finalized */}
+            {/* use https://www.labnol.org/calendar/ to generate links */}
+            <a href={href} target="_blank">
+              Add to Calendar
+            </a>
           </Box>
         </Box>
       </CardContent>
