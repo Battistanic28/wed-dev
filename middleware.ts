@@ -1,17 +1,19 @@
-import { NextResponse, NextRequest } from 'next/server';
-import { cookies } from 'next/headers';
+import { NextRequest, NextResponse } from 'next/server';
 
-export function middleware(request: NextRequest) {
-  const secret = process.env.SECRET;
-  const cookieStore = cookies();
-  const isAuthorized = cookieStore.get('secret') === secret;
-  console.log(isAuthorized);
-  // hardcodeed authorized
-  if (!isAuthorized) {
-    return;
+const sharedPassword = process.env.NEXT_PUBLIC_SECRET;
+
+export function middleware(req: NextRequest) {
+  const { nextUrl, cookies } = req;
+  const url = nextUrl.clone();
+
+  const cookiePassword = cookies.get('password');
+
+  if (cookiePassword?.value === sharedPassword) {
+    return NextResponse.next();
   }
 
-  return NextResponse.redirect(new URL('/signin', request.url));
+  url.pathname = '/auth';
+  return NextResponse.redirect(url);
 }
 
 export const config = {
