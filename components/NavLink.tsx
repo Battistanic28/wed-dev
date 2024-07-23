@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Typography } from '@mui/material';
-import { NavLink as NavLinkSx } from './styles';
+import { NavLink as NavLinkSx } from '../styles/styles';
 
 interface NavLinkProps {
   title: string;

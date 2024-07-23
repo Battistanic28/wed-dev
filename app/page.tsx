@@ -1,6 +1,6 @@
 import Page from '@/components/Page';
 import { Box, Typography } from '@mui/material';
-import { WelcomeHeroStyles, WelcomeInfoStyles } from '../components/styles';
+import { WelcomeHeroStyles, WelcomeInfoStyles } from '../styles/styles';
 
 export default function ResourcePage() {
   return (

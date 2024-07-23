@@ -1,5 +1,5 @@
 import { Toolbar, Box, useMediaQuery } from '@mui/material';
-import { NavContent, NavLinks, NavLogo } from './styles';
+import { NavContent, NavLinks, NavLogo } from '../styles/styles';
 import NavLink from './NavLink';
 import config from '../config/config.json';
 import HanburgerMenu from './HamburgerMenu';

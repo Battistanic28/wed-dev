@@ -4,7 +4,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { Box } from '@mui/material';
 // import { animateHeroText } from '../components/animations';
-import { TransitionElement } from '@/components/styles';
+import { TransitionElement } from '@/styles/styles';
 
 export default function Template({ children }: { children: React.ReactNode }) {
   useEffect(() => {

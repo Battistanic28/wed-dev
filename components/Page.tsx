@@ -3,7 +3,7 @@
 import React, { ReactNode } from 'react';
 import { Box, Typography } from '@mui/material';
 import NavBar from './NavBar';
-import { PageBody, PageFooter } from './styles';
+import { PageBody, PageFooter } from '../styles/styles';
 
 interface PageProps {
   children?: ReactNode;
